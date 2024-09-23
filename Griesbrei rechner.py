@@ -1,37 +1,55 @@
-GRIEß = "Grieß"
+GRIESS = "Grieß"
 MILCH = "Milch"
+ZURUECK = "Zurück"
 
-def wie_viel_für_personen():# Funktion für Grieß und Milchmenge abhängig der Personen
-    anzahl_personen = input("Für wie viele Personen kochst du? ")
+def input_abfrage():# fragt den aller ersten input ab -> personen oder mengenrechner
+    personen_oder_umrechnen = input("Personenanzahl oder umrechnen? ")
+    return personen_oder_umrechnen
+
+def wie_viel_fuer_personen():# Funktion fuer Griess und Milchmenge abhaengig der Personen
+    anzahl_personen = input("Fuer wie viele Personen kochst du? ")
     milch_menge = int(anzahl_personen) * 250
-    menge_grieß = int(anzahl_personen) * 37.5
-    print(f"{milch_menge} ml Milch und {menge_grieß} g Grieß, ergeben {anzahl_personen} Portionen")
+    menge_griess = int(anzahl_personen) * 37.5
+    print(f"{milch_menge} ml Milch und {menge_griess} g Griess, ergeben {anzahl_personen} Portionen")
 
-def grieß_und_milch(Grieß_oder_Milch):# Funktion für die Umrechnng von Grieß und Milch zueinander
-    if Grieß_oder_Milch == GRIEß:
-        wie_viel_milch = input("Wie viel Milch hast du? ")
+def griess_und_milch(Griess_oder_Milch):# Funktion fuer die Umrechnng von Griess und Milch zueinander
+    if Griess_oder_Milch == GRIESS:#fragt ab, ob man die Grieß menge kennt
+        menge_milch = input("Wie viel Milch hast du(nur die menge)? ")
+        menge_griess = milch_zu_griess(menge_milch)
+        print(f"Bei {menge_milch}ml Milch braubhst du {menge_griess}g Grieß, guten Apetit.")
+    elif Griess_oder_Milch == MILCH:# fragt ab, ob man die Milch menge kennt
+        menge_griess = input("Wie viel Griess hast du(nur die menge)? ")
+        menge_milch = griess_zu_milch(menge_griess)
+        print(f"Bei {menge_griess}g Grieß braubhst du {menge_milch}ml Milch, guten Apetit.")
+    elif Griess_oder_Milch == ZURUECK:
 
+    else:# gibt den loop zurück zur abfrage nach Grieß oder Milch
+        print("falscher input, bitte versuche es nochmal")
+        griess_und_milch(input("Brauchst du die Milch- oder Griessmenge? Bitte nur 'Milch' oder 'Grieß' eingeben "))
 
-    elif Grieß_oder_Milch == MILCH:
-        wie_viel_grieß = input("Wie viel Grieß hast du? ")
-        grieß_zu_milch(wie_viel_grieß)
+def griess_zu_milch(menge_griess): # rechnet aus, wie viel ml milch ich brauche wenn ich Xg Griess habe
+    menge_milch = int(int(menge_griess) * 6.6)
+    return menge_milch
 
-def grieß_zu_milch(wie_viel_grieß):
-    pass
+def milch_zu_griess(menge_milch):# rechnet aus, wie viel g Griess ich braiche, wenn ich x g Griess habe
+    menge_griess = int(menge_milch) // 6.6
+    return menge_griess
+#--------------------------------------
+'''Diese Fukntion ist das hauptprogramm'''
+def grieß_koch_helfer():# die main funktion, in der alle anderen funktionen enthalten sind.
+    input_abfrage():
+'''Diese Funktion ist das hauptprogramm'''
+#--------------------------------------
+# Ab hier fängt der eigentlich Code an
 
-def milch_zu_grieß(wie_viel_milch):
-    pass
-
-milch_menge = 1000
-menge_grieß = 150
-anzahl_personen = 4
-personen_oder_umrechnen = input("Personenanzahl oder umrechnen? ")
+'''Dieser Abschnitt ist '''
+grieß_koch_helfer()
 
 if personen_oder_umrechnen == "Personen":
-    wie_viel_für_personen()
+    wie_viel_fuer_personen()
 elif personen_oder_umrechnen == "umrechnen":
-    Grieß_oder_Milch = input("Brauchst du die Milch- oder Grießmenge? ")
-    grieß_und_milch(Grieß_oder_Milch)
+    Griess_oder_Milch = input("Brauchst du die Milch- oder Griessmenge? ")
+    griess_und_milch(Griess_oder_Milch)
 else:
     print("falscher input")
 
