@@ -1,16 +1,19 @@
-#Übungen zu Listen
-liste1 = [1, 2, 3, 4, 5]
-liste1.remove(1)
-print(liste1)
-liste1.append(43)
-liste1.insert(1, 33)
-liste1.insert(3, "test")
-print(liste1)
-
-#ich kann elemente aus einer lsite herausholen, in dem ich diesen trick anwende
-print(liste1[:1]+liste1[2:3]+liste1[5:6])
-#hier durch werden nur bestimmte objekte aus der lsite herausgeholt,
-#ohne dass die lsite zu einem String wird.
+zahlen_liste = [43, 25, 3, 5, 27]
+zahlen_liste.append(100)
+zahlen_liste.remove(zahlen_liste[2])
+print(zahlen_liste)
 
 
+#_______________
+#liste von Wörtern erstellen
+wörter_liste = ["Christina", "Jan-Philipp", "Felipe", "Jana"]
+wörter_liste.append("Alex")
+wörter_liste.remove("Christina")
+wörter_liste.reverse()
+
+print(wörter_liste)
+
+
+#______________
+#liste mit zeichenketten
 
