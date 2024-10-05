@@ -17,3 +17,5 @@ print(wörter_liste)
 #______________
 #liste mit zeichenketten
 
+
+
