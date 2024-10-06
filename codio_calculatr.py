@@ -70,3 +70,4 @@ def tildation(formular_input):
 print("Welcome to the Python calculator!")
 user_input = input("How many calculations do you want to do? ") # returns a number in a string
 calculate(user_input)
+
