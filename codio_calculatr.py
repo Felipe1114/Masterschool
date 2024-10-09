@@ -1,50 +1,49 @@
-# the mainfunction:
+OPERATOR_LIST = ["+", "-", "*", "/", "~"]
+
 def how_many_calculations():
   input_for_times_to_calculate = input("How many calculations do you want to do? ")
   for i in range(int(input_for_times_to_calculate)):
     find_operator()
-   
+
 def find_operator():
-  input_for_calculation = input("What do you want to calculate? ")
-  operator_list = ["+", "-", "*", "/", "~"]
-  for i in range(len(operator_list)):
-    if operator_list[i] in input_for_calculation:
-      list_index = i
-      input_for_calculation_splitted_up = input_for_calculation.split(operator_list[i])
-      here_happens_the_math(list_index, input_for_calculation_splitted_up)
-      
-def here_happens_the_math(list_index, input_for_calculation_splitted_up):
-  if list_index == 0: 
-    addition(input_for_calculation_splitted_up)
-  elif list_index == 1: 
-    subtraction(input_for_calculation_splitted_up)
-  elif list_index == 2: 
-    multiplication(input_for_calculation_splitted_up)
-  elif list_index == 3: 
-    division(input_for_calculation_splitted_up)
-  else: 
-    tildation(input_for_calculation_splitted_up)
+  calculation = input("What do you want to calculate? ")
+  operator_index = get_operator_index(calculation)
+  numbers = get_numbers(calculation, operator_index)
+  math_functions = [addition(numbers), subtraction(numbers), multiplication(numbers), division(numbers), tildation(numbers)]
+  operator = define_operator(calculation, operator_index)
+  print(math_functions[operator])
 
-def addition(input_for_calculation_splitted_up):
-  result = int(input_for_calculation_splitted_up[0]) + int(input_for_calculation_splitted_up[1])
-  print(f"The answer is {result}")
+def define_operator(calculation, operator_index):
+  return OPERATOR_LIST.index(calculation[operator_index])
 
-def subtraction(input_for_calculation_splitted_up):
-  result = int(input_for_calculation_splitted_up[0]) - int(input_for_calculation_splitted_up[1])
-  print(f"The answer is {result}")
+def get_numbers(calculation, index):
+  return [calculation[:index], calculation[index + 1:]]
 
-def multiplication(input_for_calculation_splitted_up):
-  result = int(input_for_calculation_splitted_up[0]) * int(input_for_calculation_splitted_up[1])
-  print(f"The answer is {result}")
+def get_operator_index(calculation):
+  for index in range(len(calculation)):
+    if not calculation[index].isalnum():
+      return index
 
-def division(input_for_calculation_splitted_up):
-  result = int(input_for_calculation_splitted_up[0]) / int(input_for_calculation_splitted_up[1])
-  print(f"The answer is {result}")
+def addition(numbers):
+  result = int(numbers[0]) + int(numbers[1])
+  return(f"The answer is {result}")
 
-def tildation(input_for_calculation_splitted_up):
-  result_modolo = int(input_for_calculation_splitted_up[0]) % int(input_for_calculation_splitted_up[1])
-  result_floordivision = int(input_for_calculation_splitted_up[0]) // int(input_for_calculation_splitted_up[1])
-  print(f"The answer is {result_floordivision} \nThe remainder is {result_modolo}")
+def subtraction(numbers):
+  result = int(numbers[0]) - int(numbers[1])
+  return(f"The answer is {result}")
+
+def multiplication(numbers):
+  result = int(numbers[0]) * int(numbers[1])
+  return(f"The answer is {result}")
+
+def division(numbers):
+  result = int(numbers[0]) / int(numbers[1])
+  return(f"The answer is {result}")
+
+def tildation(numbers):
+  result_modolo = int(numbers[0]) % int(numbers[1])
+  result_floordivision = int(numbers[0]) // int(numbers[1])
+  return(f"The answer is {result_floordivision} \nThe remainder is {result_modolo}")
 
 def main():
   print("Welcome to the Python calculator!")
