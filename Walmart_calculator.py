@@ -5,13 +5,14 @@ das programm rechnet den preis mit der steur zusammen und gibt die differenz zu 
 '''
 def change_back():
     price = article_price()
-    #full_price = price + price * 0.115
-    full_price = full_price(price)
+    #full_price = price + price * 0.115 <-- diese linefunktioniert
+    full_price = full_price(price) #<-- diese line funktioniert nicht
     return calculate_change(full_price)
 
+# in dieser Funktion ist das problem
 def full_price(price):
     full_price = price + price * 0.115
-    return full_price
+    return full_price # hier ist das problem ?
 
 def article_price():
     return float(input("How much does the article cost?(a float number, please) "))
