@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="weite funktionen eingebaut">
+    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="movies nach ranking ausgeben implementiert">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_10_24,_14_11_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_10_24__14_11__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/codio_movies.py" afterDir="false" />
     </list>
@@ -38,7 +40,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Working_branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,41 +71,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.2students.executor": "Run",
-    "Python.Boolean übungen.executor": "Run",
-    "Python.Build_in_funktions.executor": "Run",
-    "Python.CRUD übung.executor": "Run",
-    "Python.Debugging.executor": "Run",
-    "Python.Debugging_2.executor": "Run",
-    "Python.Dictionary_übung.executor": "Run",
-    "Python.Griesbrei rechner.executor": "Run",
-    "Python.List übungen.executor": "Run",
-    "Python.Loop_übungen.executor": "Run",
-    "Python.Loops+.executor": "Run",
-    "Python.Range Übungen.executor": "Run",
-    "Python.Sommertime.executor": "Run",
-    "Python.Walmart_calculator.executor": "Run",
-    "Python.algorytmus_übung.executor": "Run",
-    "Python.append_vs_conactination.executor": "Run",
-    "Python.codio_calculatr.executor": "Run",
-    "Python.codio_find_words_romeo_and_juliet.executor": "Run",
-    "Python.codio_movie_data_bank.executor": "Run",
-    "Python.codio_movies.executor": "Run",
-    "Python.codio_prime_minister.executor": "Run",
-    "Python.datetime übungen.executor": "Run",
-    "Python.foo.executor": "Run",
-    "Python.number_pyramyd.executor": "Run",
-    "Python.print_possible_pairs.executor": "Run",
-    "Python.test_file.executor": "Run",
-    "Python.while loops.executor": "Run",
-    "Python.übungen inbuild functions.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Working__branch",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.2students.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Boolean übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Build_in_funktions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CRUD übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Debugging.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Debugging_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dictionary_übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Griesbrei rechner.executor&quot;: &quot;Run&quot;,
+    &quot;Python.List übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loop_übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loops+.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Range Übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sommertime.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Walmart_calculator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.algorytmus_übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.append_vs_conactination.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_calculatr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_find_words_romeo_and_juliet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_movie_data_bank.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_prime_minister.executor&quot;: &quot;Run&quot;,
+    &quot;Python.datetime übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.foo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.number_pyramyd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.print_possible_pairs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python.while loops.executor&quot;: &quot;Run&quot;,
+    &quot;Python.übungen inbuild functions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;make__histogramm__to__movies&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.codio_movies">
     <configuration name="Sommertime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Masterschool" />
@@ -371,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729776908623</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="movies nach ranking ausgeben implementiert">
+      <option name="closed" value="true" />
+      <created>1729788989728</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729788989728</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -399,7 +409,8 @@
     <MESSAGE value="mit prime minister in sackgasse gekommen" />
     <MESSAGE value="fehler in prime minister gefunden und programm erfolgreich beendet." />
     <MESSAGE value="weite funktionen eingebaut" />
-    <option name="LAST_COMMIT_MESSAGE" value="weite funktionen eingebaut" />
+    <MESSAGE value="movies nach ranking ausgeben implementiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="movies nach ranking ausgeben implementiert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

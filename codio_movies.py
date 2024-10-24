@@ -1,17 +1,19 @@
-import random
-'''  Aufgaben:
-  x Menu
-  x nach auswahl wieder zurück zu menu
-  x Alle Filme auflisten
-  x einen Film hinzufügen
-  x einen film löschen
-  x einen film updaten (die wertung ändern)
-  x die statistiken anzeigen:
-  x - durchschnitt, median, bester, schlechtester
-  x einen zufälligen film printen
-  nach einem film suchen (case insensitiv)
-  x filme nach rating anzeigen
-  '''
+import random, matplotlib.pyplot as plt
+
+def make_histogramm(movies):
+    movie_list = make_rating_list(movies)
+    print(movie_list)
+    plt.hist(movie_list)
+    plt.show()
+    # datei muss noch ausgegeben und gespeichert werden
+
+def search_for_movie(movies):
+    user_input = input("What movie, you are searching for?: ")
+    for key in movies:
+        if user_input.lower() == key.lower():
+            print(f"Here is the movie '{key}'. \nHe has the Rating: {movies[key]}")
+    what_to_do(int(print_menu(back_to_menu())), movies)
+
 def print_ranked_movies(dic_sorted_movies):
     print("\n")
     print("Here are al Movies, ranked from best to worst:")
@@ -152,10 +154,11 @@ def what_to_do(user_input, movies):
     if user_input == 6:
         random_movie(movies)
     if user_input == 7:
-        # search movie
-        pass
+        search_for_movie(movies)
     if user_input == 8:
         movies_sorted(movies)
+    if user_input == 9:
+        make_histogramm(movies)
 
 def back_to_menu():
     return input("\npress Enter to continue")
@@ -171,7 +174,8 @@ def print_menu(user_input = ""):
     print("6. Random movie")
     print("7. Search movie")
     print("8. Movies sorted by rating")
-    return input("Enter choice (1-8): ")
+    print("9. Histogramm of ratings")
+    return input("Enter choice (1-9): ")
 
 def main():
   # Dictionary to store the movies and the rating
