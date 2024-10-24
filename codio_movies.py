@@ -1,3 +1,4 @@
+import random
 '''  Aufgaben:
   x Menu
   x nach auswahl wieder zurück zu menu
@@ -7,10 +8,45 @@
   x einen film updaten (die wertung ändern)
   x die statistiken anzeigen:
   x - durchschnitt, median, bester, schlechtester
-  einen zufälligen film printen
+  x einen zufälligen film printen
   nach einem film suchen (case insensitiv)
-  filme nach rating anzeigen
+  x filme nach rating anzeigen
   '''
+def print_ranked_movies(dic_sorted_movies):
+    print("\n")
+    print("Here are al Movies, ranked from best to worst:")
+    for key in dic_sorted_movies:
+        print(key, dic_sorted_movies[key], sep = " , ")
+
+def movies_sorted(movies):
+    dic_sorted_movies = {}
+    highest_key = ""
+    copy_movies = movies.copy()
+    while len(dic_sorted_movies) < len(movies):
+        highest_val = 0
+        for key, val in copy_movies.items():
+            if val > highest_val:
+                highest_val = val
+                highest_key = key
+        del copy_movies[highest_key]
+        dic_sorted_movies[highest_key] = highest_val
+    print_ranked_movies(dic_sorted_movies)
+    what_to_do(int(print_menu(back_to_menu())), movies)
+
+def random_movie(movies):
+    movie_list = make_movie_list(movies)
+    index_list = random.randrange(len(movie_list))
+    random_movie = movie_list[index_list]
+    print("Here is a ranodm movie out of the Database:")
+    print(f"Movie: {random_movie}")
+    what_to_do(int(print_menu(back_to_menu())), movies)
+
+def make_movie_list(movies):
+    movie_list = []
+    for key in movies:
+        movie_list.append(key)
+    return movie_list
+
 def make_rating_list(movies):
     value_list = []
     for key in movies:
@@ -18,8 +54,8 @@ def make_rating_list(movies):
     return value_list
 
 def sort_list(list):
-    sorted_list = list.sort()
-    return sorted_list
+    list.sort()
+    return list
 
 def sum_list(list):
     sum = 0
@@ -32,15 +68,15 @@ def avergae(movies):
    average = sum_list(value_list) / len(value_list)
    return average
 
-def median(movies):
+def make_median(movies):
     sorted_list = sort_list(make_rating_list(movies))
-    # findet den mittleren wert der sortierten liste (für den median)
-    mid_index = len(list) / 2 - 1
+    # finds the middle vlaue of the list (for the meidan)
+    mid_index = len(sorted_list) // 2 - 1
     median = 0
-    # wenn liste gerade ist
+    # when list is even
     if len(sorted_list) % 2 == 0:
         median = (sorted_list[mid_index] + sorted_list[mid_index+1]) / 2
-    # wenn liste ungerade ist
+    # when lst is uneven
     else:
         median = sorted_list[mid_index]
     return median
@@ -57,7 +93,7 @@ def print_statistiks(movies):
     movie_list = make_rating_list(movies)
     sorted_list = sort_list(movie_list)
     average = avergae(movies)
-    median = median(movies)
+    median = make_median(movies)
     best_movie = best(sorted_list)
     worst_movie = worst(sorted_list)
     print("The statistics are:")
@@ -65,6 +101,7 @@ def print_statistiks(movies):
     print(f"The median of rating is: {median}")
     print(f"The best movie is: {best_movie}")
     print(f"The worst movie is: {worst_movie}")
+    what_to_do(int(print_menu(back_to_menu())), movies)
 
 def update_rating(movies):
     print_movies_and_ratings(movies)
@@ -102,11 +139,6 @@ def print_movie_list(movies):
         print(key)
 
 def what_to_do(user_input, movies):
-    # hier test prints einfügen
-    #===============================
-    print(movies)
-    print(len(movies))
-    #===============================
     if user_input == 1:
         list_all_movies(movies)
     if user_input == 2:
@@ -118,14 +150,12 @@ def what_to_do(user_input, movies):
     if user_input == 5:
         print_statistiks(movies)
     if user_input == 6:
-        # random movie
-        pass
+        random_movie(movies)
     if user_input == 7:
         # search movie
         pass
     if user_input == 8:
-        # movies sorted by rating
-        pass
+        movies_sorted(movies)
 
 def back_to_menu():
     return input("\npress Enter to continue")

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="fehler in prime minister gefunden und programm erfolgreich beendet.">
+    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="weite funktionen eingebaut">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/codio_movies.py" afterDir="false" />
     </list>
     <list id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
     <list id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
@@ -362,7 +363,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728921172182</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="weite funktionen eingebaut">
+      <option name="closed" value="true" />
+      <created>1729776908623</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729776908623</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -389,7 +398,8 @@
     <MESSAGE value="prime mister file erstellt und programmiert" />
     <MESSAGE value="mit prime minister in sackgasse gekommen" />
     <MESSAGE value="fehler in prime minister gefunden und programm erfolgreich beendet." />
-    <option name="LAST_COMMIT_MESSAGE" value="fehler in prime minister gefunden und programm erfolgreich beendet." />
+    <MESSAGE value="weite funktionen eingebaut" />
+    <option name="LAST_COMMIT_MESSAGE" value="weite funktionen eingebaut" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
