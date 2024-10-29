@@ -43,19 +43,11 @@ def removoe_spec_characters():
     '''
     replaces all special characters in the string with empty space.
     '''
-    play1 = PLAY.replace('.', "")
-    play2 = play1.replace('\\', "")
-    play3 = play2.replace('[', "")
-    play4 = play3.replace(']', "")
-    play5 = play4.replace('_', "")
-    play6 = play5.replace(',', "")
-    play7 = play6.replace(';', "")
-    play8 = play7.replace('?', "")
-    play9 = play8.replace('!', "")
-    play10 = play9.replace(':', "")
-    play11 = play10.replace('’', "")
-    play12 = play11.replace('\n', "")
-    return play12
+    lst_special_char = ['\n', '.', '\\', '[', ']', '_', ',', ';', '?', '!', ':', ]
+    str_without_spec_char = PLAY
+    for char in lst_special_char :
+        str_without_spec_char = str_without_spec_char.replace(char, "")
+    return str_without_spec_char
 
 def main():
     '''
@@ -63,8 +55,8 @@ def main():
     second: dic_words contains a dictionary with all words from the text, without special characters
     third: prints the most fifty words form the dict 'dic_most_words'
     '''
-    string_without_special_chars = removoe_spec_characters()
-    dic_r_and_j = make_dic_r_and_j(string_without_special_chars)
+    str_without_spec_char = removoe_spec_characters()
+    dic_r_and_j = make_dic_r_and_j(str_without_spec_char)
     dic_most_words = find_most_words(dic_r_and_j)
     print_most_words(dic_most_words)
 
