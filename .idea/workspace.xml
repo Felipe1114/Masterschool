@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="movies nach ranking ausgeben implementiert">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_10_24,_14_11_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_10_24__14_11__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/codio_movies.py" afterDir="false" />
+    </list>
+    <list id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
+    <list id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="alles-in-eine-funktion" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Working_branch" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Felipe1114&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Felipe1114/Masterschool.git&quot;,
+    &quot;accountId&quot;: &quot;698801db-5927-4c2d-91fc-d53f14b811be&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Griesbrei rechner.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2mTe6Pji8UJicxsrTQRSBtkSc69" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.2students.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Boolean übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Build_in_funktions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CRUD übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Debugging.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Debugging_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dictionary_übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Griesbrei rechner.executor&quot;: &quot;Run&quot;,
+    &quot;Python.List übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loop_übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loops+.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Range Übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sommertime.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Walmart_calculator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.algorytmus_übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.append_vs_conactination.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_calculatr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_find_words_romeo_and_juliet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_movie_data_bank.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_prime_minister.executor&quot;: &quot;Run&quot;,
+    &quot;Python.datetime übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.foo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.number_pyramyd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.print_possible_pairs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python.while loops.executor&quot;: &quot;Run&quot;,
+    &quot;Python.übungen inbuild functions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;make__histogramm__to__movies&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python.codio_movies">
+    <configuration name="Sommertime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sommertime.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="algorytmus_übung" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorytmus_übung.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="codio_find_words_romeo_and_juliet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codio_find_words_romeo_and_juliet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="codio_movie_data_bank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codio_movie_data_bank.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="codio_movies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codio_movies.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.codio_movies" />
+        <item itemvalue="Python.codio_movie_data_bank" />
+        <item itemvalue="Python.codio_find_words_romeo_and_juliet" />
+        <item itemvalue="Python.algorytmus_übung" />
+        <item itemvalue="Python.Sommertime" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-98f27166c754-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.21829.153" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="" />
+      <changelist id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
+      <changelist id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
+      <created>1727104817305</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1727104817305</updated>
+    </task>
+    <task id="LOCAL-00001" summary="formel aufgeschrieben">
+      <option name="closed" value="true" />
+      <created>1727105507651</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1727105507651</updated>
+    </task>
+    <task id="LOCAL-00002" summary="funktion für Personenanzahl erstellt.&#10;unterstes Print statement entfert">
+      <option name="closed" value="true" />
+      <created>1727111765341</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1727111765341</updated>
+    </task>
+    <task id="LOCAL-00003" summary="funktionen Grieß zu milch, und milch zu grieß eingefügt">
+      <option name="closed" value="true" />
+      <created>1727112525102</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727112525102</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Loop eingebaut und angefangen alles in eine einzige Funktion zu packen.">
+      <option name="closed" value="true" />
+      <created>1727114163942</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1727114163942</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Loop eingebaut und angefangen alles in eine einzige Funktion zu packen.">
+      <option name="closed" value="true" />
+      <created>1727166484971</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1727166484971</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Loop eingebaut und angefangen alles in eine einzige Funktion zu packen.">
+      <option name="closed" value="true" />
+      <created>1728165766317</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1728165766317</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Loop eingebaut und angefangen alles in eine einzige Funktion zu packen.">
+      <option name="closed" value="true" />
+      <created>1728246594455</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1728246594456</updated>
+    </task>
+    <task id="LOCAL-00008" summary="calculator so aufgebaut, dass es egal ist, wie viele stellen die zaheln haben, die man verrechnen will">
+      <option name="closed" value="true" />
+      <created>1728246641119</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1728246641119</updated>
+    </task>
+    <task id="LOCAL-00009" summary="calculator auf den aktuellen &quot;coding standart&quot; gebracht. &#10;code cleaner und logischer gemacht">
+      <option name="closed" value="true" />
+      <created>1728503301648</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1728503301648</updated>
+    </task>
+    <task id="LOCAL-00010" summary="mit eike neuen code geschrieben">
+      <option name="closed" value="true" />
+      <created>1728510800996</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1728510800996</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Walmart_calculatr gecodet.&#10;Man gibt preis ein. &#10;Dann wird die steuer aufgerechnet und&#10;das rückgeld für den kunden wird ausgegeben">
+      <option name="closed" value="true" />
+      <created>1728576002406</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1728576002406</updated>
+    </task>
+    <task id="LOCAL-00012" summary="probleme markiert">
+      <option name="closed" value="true" />
+      <created>1728576239276</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1728576239276</updated>
+    </task>
+    <task id="LOCAL-00013" summary="prime mister file erstellt und programmiert">
+      <option name="closed" value="true" />
+      <created>1728681533990</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1728681533990</updated>
+    </task>
+    <task id="LOCAL-00014" summary="mit prime minister in sackgasse gekommen">
+      <option name="closed" value="true" />
+      <created>1728917361554</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1728917361554</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fehler in prime minister gefunden und programm erfolgreich beendet.">
+      <option name="closed" value="true" />
+      <created>1728921172182</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1728921172182</updated>
+    </task>
+    <task id="LOCAL-00016" summary="weite funktionen eingebaut">
+      <option name="closed" value="true" />
+      <created>1729776908623</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729776908623</updated>
+    </task>
+    <task id="LOCAL-00017" summary="movies nach ranking ausgeben implementiert">
+      <option name="closed" value="true" />
+      <created>1729788989728</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1729788989728</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="formel aufgeschrieben" />
+    <MESSAGE value="funktion für Personenanzahl erstellt.&#10;unterstes Print statement entfert" />
+    <MESSAGE value="funktionen Grieß zu milch, und milch zu grieß eingefügt" />
+    <MESSAGE value="Loop eingebaut und angefangen alles in eine einzige Funktion zu packen." />
+    <MESSAGE value="calculator so aufgebaut, dass es egal ist, wie viele stellen die zaheln haben, die man verrechnen will" />
+    <MESSAGE value="calculator auf den aktuellen &quot;coding standart&quot; gebracht. &#10;code cleaner und logischer gemacht" />
+    <MESSAGE value="mit eike neuen code geschrieben" />
+    <MESSAGE value="Walmart_calculatr gecodet.&#10;Man gibt preis ein. &#10;Dann wird die steuer aufgerechnet und&#10;das rückgeld für den kunden wird ausgegeben" />
+    <MESSAGE value="probleme markiert" />
+    <MESSAGE value="prime mister file erstellt und programmiert" />
+    <MESSAGE value="mit prime minister in sackgasse gekommen" />
+    <MESSAGE value="fehler in prime minister gefunden und programm erfolgreich beendet." />
+    <MESSAGE value="weite funktionen eingebaut" />
+    <MESSAGE value="movies nach ranking ausgeben implementiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="movies nach ranking ausgeben implementiert" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Walmart_calculator.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
