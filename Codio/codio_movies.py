@@ -1,4 +1,8 @@
 import random
+from re import search
+
+from macholib.mach_o import lc_str
+
 '''  Aufgaben:
   x Menu
   x nach auswahl wieder zurück zu menu
@@ -12,11 +16,24 @@ import random
   nach einem film suchen (case insensitiv)
   x filme nach rating anzeigen
   '''
+def search_movie(movies: type(dict)):
+    searched_movie = input("Wich movie are you searching for?: ")
+    for key in movies.keys():
+        if searched_movie.lower() == key.lower():
+            print_single_ranked_movie(key, movies)
+    what_to_do(int(print_menu(back_to_menu())), movies)
+
+
+
+def print_single_ranked_movie(key, movies: type(dict)):
+    print(key, movies[key], sep = " : ")
+
+
 def print_ranked_movies(dic_sorted_movies):
     print("\n")
     print("Here are al Movies, ranked from best to worst:")
     for key in dic_sorted_movies:
-        print(key, dic_sorted_movies[key], sep = " , ")
+        print(key, dic_sorted_movies[key], sep = " : ")
 
 def movies_sorted(movies):
     dic_sorted_movies = {}
@@ -54,7 +71,7 @@ def make_rating_list(movies):
     return value_list
 
 def sort_list(list):
-    list.sort()
+    list.sort(reverse=True)
     return list
 
 def sum_list(list):
@@ -81,26 +98,30 @@ def make_median(movies):
         median = sorted_list[mid_index]
     return median
 
-def best(sorted_list):
-    best = sorted_list[0]
-    return best
+def best_movie(movies):
+    best_key = max(movies, key = movies.get)
+    best_val = movies[max(movies, key = movies.get)]
+    return best_key, best_val
 
-def worst(sorted_list):
-    worst = sorted_list[-1]
-    return worst
+def worst_movie(movies):
+    worst_key = min(movies, key = movies.get)
+    worst_val = movies[min(movies, key = movies.get)]
+    return worst_key, worst_val
 
+# statistics esten
 def print_statistiks(movies):
     movie_list = make_rating_list(movies)
     sorted_list = sort_list(movie_list)
     average = avergae(movies)
     median = make_median(movies)
-    best_movie = best(sorted_list)
-    worst_movie = worst(sorted_list)
+    best_key, best_val = best_movie(movies)
+    worst_key, worst_val = worst_movie(movies)
+    print()
     print("The statistics are:")
-    print(f"Average of rating: {average}")
+    print(f"Average of rating: {average:.2f}")
     print(f"The median of rating is: {median}")
-    print(f"The best movie is: {best_movie}")
-    print(f"The worst movie is: {worst_movie}")
+    print(f"The best movie is: {best_key} : {best_val}")
+    print(f"The worst movie is: {worst_key} : {worst_val}")
     what_to_do(int(print_menu(back_to_menu())), movies)
 
 def update_rating(movies):
@@ -123,7 +144,7 @@ def add_movie(movies):
     what_to_do(int(print_menu(back_to_menu())), movies)
 
 def list_all_movies(movies : dict):
-    print_movie_list(movies)
+    print_movies_and_ratings(movies)
     what_to_do(int(print_menu(back_to_menu())), movies)
 
 def print_movies_and_ratings(movies):
@@ -148,12 +169,11 @@ def what_to_do(user_input, movies):
     if user_input == 4:
         update_rating(movies)
     if user_input == 5:
-        print_statistiks(movies)
+        print_statistiks(movies) # testen
     if user_input == 6:
         random_movie(movies)
     if user_input == 7:
-        # search movie
-        pass
+        search_movie(movies)
     if user_input == 8:
         movies_sorted(movies)
 
