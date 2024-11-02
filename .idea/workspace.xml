@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="weite funktionen eingebaut">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_10_24,_14_11_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_10_24__14_11__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="ordner geändert">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/codio_movies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Codio/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/Codio/codio_movies.py" afterDir="false" />
     </list>
     <list id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
     <list id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
@@ -40,7 +38,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Working_branch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,47 +69,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.2students.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Boolean übungen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Build_in_funktions.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CRUD übung.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Debugging.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Debugging_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Dictionary_übung.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Griesbrei rechner.executor&quot;: &quot;Run&quot;,
-    &quot;Python.List übungen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Loop_übungen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Loops+.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Range Übungen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Sommertime.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Walmart_calculator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.algorytmus_übung.executor&quot;: &quot;Run&quot;,
-    &quot;Python.append_vs_conactination.executor&quot;: &quot;Run&quot;,
-    &quot;Python.codio_calculatr.executor&quot;: &quot;Run&quot;,
-    &quot;Python.codio_find_words_romeo_and_juliet.executor&quot;: &quot;Run&quot;,
-    &quot;Python.codio_movie_data_bank.executor&quot;: &quot;Run&quot;,
-    &quot;Python.codio_movies.executor&quot;: &quot;Run&quot;,
-    &quot;Python.codio_prime_minister.executor&quot;: &quot;Run&quot;,
-    &quot;Python.datetime übungen.executor&quot;: &quot;Run&quot;,
-    &quot;Python.foo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.number_pyramyd.executor&quot;: &quot;Run&quot;,
-    &quot;Python.print_possible_pairs.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test_file.executor&quot;: &quot;Run&quot;,
-    &quot;Python.while loops.executor&quot;: &quot;Run&quot;,
-    &quot;Python.übungen inbuild functions.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Working__branch&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.2students.executor": "Run",
+    "Python.Boolean übungen.executor": "Run",
+    "Python.Build_in_funktions.executor": "Run",
+    "Python.CRUD übung.executor": "Run",
+    "Python.Debugging.executor": "Run",
+    "Python.Debugging_2.executor": "Run",
+    "Python.Dictionary_übung.executor": "Run",
+    "Python.Griesbrei rechner.executor": "Run",
+    "Python.List übungen.executor": "Run",
+    "Python.Loop_übungen.executor": "Run",
+    "Python.Loops+.executor": "Run",
+    "Python.Range Übungen.executor": "Run",
+    "Python.Sommertime.executor": "Run",
+    "Python.Walmart_calculator.executor": "Run",
+    "Python.algorytmus_übung.executor": "Run",
+    "Python.append_vs_conactination.executor": "Run",
+    "Python.codio_calculatr.executor": "Run",
+    "Python.codio_find_words_romeo_and_juliet.executor": "Run",
+    "Python.codio_movie_data_bank.executor": "Run",
+    "Python.codio_movies (1).executor": "Run",
+    "Python.codio_movies.executor": "Run",
+    "Python.codio_prime_minister.executor": "Run",
+    "Python.datetime übungen.executor": "Run",
+    "Python.foo.executor": "Run",
+    "Python.number_pyramyd.executor": "Run",
+    "Python.print_possible_pairs.executor": "Run",
+    "Python.test_file.executor": "Run",
+    "Python.while loops.executor": "Run",
+    "Python.übungen inbuild functions.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "docstrings__for__romeo-und-julia",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Codio" />
       <recent name="$PROJECT_DIR$/codio" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.codio_movies">
+  <component name="RunManager" selected="Python.codio_movies (1)">
     <configuration name="Sommertime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Masterschool" />
       <option name="ENV_FILES" value="" />
@@ -126,28 +126,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sommertime.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="algorytmus_übung" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Masterschool" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/algorytmus_übung.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -200,6 +178,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="codio_movies (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Codio" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Codio/codio_movies.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="codio_movies" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Masterschool" />
       <option name="ENV_FILES" value="" />
@@ -224,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.codio_movies (1)" />
         <item itemvalue="Python.codio_movies" />
         <item itemvalue="Python.Sommertime" />
         <item itemvalue="Python.codio_movie_data_bank" />
         <item itemvalue="Python.codio_find_words_romeo_and_juliet" />
-        <item itemvalue="Python.algorytmus_übung" />
       </list>
     </recent_temporary>
   </component>
@@ -378,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729776908623</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ordner geändert">
+      <option name="closed" value="true" />
+      <created>1730537537567</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730537537568</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -406,17 +414,7 @@
     <MESSAGE value="mit prime minister in sackgasse gekommen" />
     <MESSAGE value="fehler in prime minister gefunden und programm erfolgreich beendet." />
     <MESSAGE value="weite funktionen eingebaut" />
-    <option name="LAST_COMMIT_MESSAGE" value="weite funktionen eingebaut" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Walmart_calculator.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="ordner geändert" />
+    <option name="LAST_COMMIT_MESSAGE" value="ordner geändert" />
   </component>
 </project>
