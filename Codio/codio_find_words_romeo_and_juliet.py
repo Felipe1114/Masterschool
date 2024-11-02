@@ -1,4 +1,4 @@
-from romeo_and_juliet import PLAY
+from Codio.romeo_and_juliet import PLAY
 ROME_AND_JULIET_TEXT = PLAY
 
 # gives a list without special characters; but all lettes are a single element in the list
