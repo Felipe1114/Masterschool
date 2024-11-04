@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="ordner geändert">
+    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="movies nach ranking ausgeben implementiert">
+      <change afterPath="$PROJECT_DIR$/test_files/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übungen/create_files_übungen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übungen/exception Übungen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übungen/test_writing_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codio/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/Codio/codio_movies.py" afterDir="false" />
     </list>
     <list id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
     <list id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
@@ -38,7 +41,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Working_branch" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -93,7 +96,9 @@
     "Python.codio_movies (1).executor": "Run",
     "Python.codio_movies.executor": "Run",
     "Python.codio_prime_minister.executor": "Run",
+    "Python.create_files_übungen.executor": "Run",
     "Python.datetime übungen.executor": "Run",
+    "Python.exception Übungen.executor": "Run",
     "Python.foo.executor": "Run",
     "Python.number_pyramyd.executor": "Run",
     "Python.print_possible_pairs.executor": "Run",
@@ -101,17 +106,16 @@
     "Python.while loops.executor": "Run",
     "Python.übungen inbuild functions.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "docstrings__for__romeo-und-julia",
+    "git-widget-placeholder": "#4 on Working__branch",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Codio" />
-      <recent name="$PROJECT_DIR$/codio" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.codio_movies (1)">
+  <component name="RunManager" selected="Python.create_files_übungen">
     <configuration name="Sommertime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Masterschool" />
       <option name="ENV_FILES" value="" />
@@ -126,50 +130,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sommertime.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="codio_find_words_romeo_and_juliet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Masterschool" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codio_find_words_romeo_and_juliet.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="codio_movie_data_bank" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Masterschool" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codio_movie_data_bank.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -222,13 +182,57 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="create_files_übungen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übungen" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übungen/create_files_übungen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="exception Übungen" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Masterschool" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übungen" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übungen/exception Übungen.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.create_files_übungen" />
+        <item itemvalue="Python.exception Übungen" />
         <item itemvalue="Python.codio_movies (1)" />
-        <item itemvalue="Python.codio_movies" />
         <item itemvalue="Python.Sommertime" />
-        <item itemvalue="Python.codio_movie_data_bank" />
-        <item itemvalue="Python.codio_find_words_romeo_and_juliet" />
+        <item itemvalue="Python.codio_movies" />
       </list>
     </recent_temporary>
   </component>
@@ -378,13 +382,13 @@
       <option name="project" value="LOCAL" />
       <updated>1729776908623</updated>
     </task>
-    <task id="LOCAL-00017" summary="ordner geändert">
+    <task id="LOCAL-00017" summary="movies nach ranking ausgeben implementiert">
       <option name="closed" value="true" />
-      <created>1730537537567</created>
+      <created>1729788989728</created>
       <option name="number" value="00017" />
       <option name="presentableId" value="LOCAL-00017" />
       <option name="project" value="LOCAL" />
-      <updated>1730537537568</updated>
+      <updated>1729788989728</updated>
     </task>
     <option name="localTasksCounter" value="18" />
     <servers />
@@ -414,7 +418,7 @@
     <MESSAGE value="mit prime minister in sackgasse gekommen" />
     <MESSAGE value="fehler in prime minister gefunden und programm erfolgreich beendet." />
     <MESSAGE value="weite funktionen eingebaut" />
-    <MESSAGE value="ordner geändert" />
-    <option name="LAST_COMMIT_MESSAGE" value="ordner geändert" />
+    <MESSAGE value="movies nach ranking ausgeben implementiert" />
+    <option name="LAST_COMMIT_MESSAGE" value="movies nach ranking ausgeben implementiert" />
   </component>
 </project>
