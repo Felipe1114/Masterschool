@@ -1,4 +1,3 @@
-from Codio.romeo_and_juliet import PLAY
 ROME_AND_JULIET_TEXT = PLAY
 
 def print_most_words(dictionary : dict):

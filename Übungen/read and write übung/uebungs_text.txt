@@ -1,0 +1,3 @@
+Hello, World! This is a test document... Do you see these special characters? They should be removed: @#$%^&*()[]{}<>|/~`+=;:,!
+Let's try removing numbers as well: 1234567890
+And finally, let's keep only letters and spaces 😊
