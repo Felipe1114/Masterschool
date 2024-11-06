@@ -1,3 +1,37 @@
+def calculate_failing_grades(students):
+    """gets as input a dict with stutend info
+    takes the grades of each student and checks, if grade is failed
+    gives back a dict, where each key is student name
+    and each value the num of faling grades
+
+    Args:
+        students(list): list of dict with student info
+
+    Returns:
+        failing_grades(dict): dict of student name as key
+        and failing grades as value:{
+        student_name1 : failing_grades,
+        student_name2 . failing_grades
+        }
+    """
+    print("In calculate_failing_grades")
+    subject_list = ["english_grade", "math_grade"]
+    failing_grades = {}
+    for dict in students:
+        student_name = "no_name"
+        sum_failng_grades = 0
+        for key in dict:
+            if key == "student":
+                student_name = dict[key]
+                print(student_name)
+            else:
+                #eigene funktion?
+                if dict[key] < 55:
+                    sum_failng_grades += 1
+            # hier irgenwo muss failing_grades der key hinzugefügt werden.
+            # ich weiß nurnoch nicht genau wo...
+    print(failing_grades)
+
 def get_all_grades_from_subject(subject:str, students:list) -> list:
     grade_list = []
     subject_key = subject + " grade"
@@ -158,7 +192,7 @@ def main():
     student_info_list = make_student_info_list()
     print_student_info(student_info_list)
     print_average_grades(student_info_list)
-
+    print(calculate_failing_grades(student_info_list))
 
 
 if __name__ == "__main__":
