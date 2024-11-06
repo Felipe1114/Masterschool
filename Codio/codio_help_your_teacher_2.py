@@ -1,3 +1,39 @@
+def get_all_grades_from_subject(subject:str, students:list) -> list:
+    grade_list = []
+    subject_key = subject + " grade"
+    for dict in students:
+        grade_list.append(dict[subject_key])
+    return grade_list
+
+
+def print_average_grades(students:list) -> dict:
+    """Takes all grades from the list of dicts and calculates
+    the average of math and english grades and the average
+    all grades.
+
+    Args:
+        students(dict): list of dicts
+
+    Returns:
+        general_average_grades(dict): a dict, with three keys:{
+        English : average(float),
+        Math : average(float),
+        Overall average : average(float)
+        }
+    """
+    math_grades = get_all_grades_from_subject("math", students)
+    english_grades = get_all_grades_from_subject("english", students)
+    average_math = sum(math_grades) / len(math_grades)
+    average_english = sum(english_grades) / len(english_grades)
+    over_all_average = sum(math_grades + english_grades) / (len(math_grades) + len(english_grades))
+    print(f"\nAverage grades per subject:\n"
+          f"English: {average_english}\n"
+          f"Math: {average_math}\n\n"
+          f"Overall average grade across all subjects: {over_all_average}")
+
+
+
+
 def make_list_of_grades(student_info:dict) -> list:
     """gets the grades from given dictionary(student_info)
     with slicing and puts the grades in a list
@@ -121,7 +157,7 @@ def main():
     """
     student_info_list = make_student_info_list()
     print_student_info(student_info_list)
-
+    print_average_grades(student_info_list)
 
 
 
