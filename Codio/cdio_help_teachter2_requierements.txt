@@ -29,3 +29,17 @@ and print out the student’s name, best grade, and average grade in a formatted
 Call this function from your main() function,
 so that it outputs the information (See demo for the final output).
 
+=====================================
+
+Input in Terminal:
+Enter the number of students: 1
+
+Enter details for student 1:
+Enter student name: peter
+Enter English grade: 4
+Enter Math grade: 4
+______________________________________
+result after programm finished:
+Student Information:
+Student: peter, Best Grade: 4.0, Average Grade: 4.00
+
