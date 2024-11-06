@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="weite funktionen eingebaut">
+      <change afterPath="$PROJECT_DIR$/Übungen/Json_Übung/Starwars_print_stats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Übungen/Json_Übung/YT_API_Starwars.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codio_movies.py" beforeDir="false" afterPath="$PROJECT_DIR$/codio_movies.py" afterDir="false" />
     </list>
     <list id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
     <list id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
@@ -38,7 +39,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="codio_refactoring" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -84,6 +85,7 @@
     "Python.Loops+.executor": "Run",
     "Python.Range Übungen.executor": "Run",
     "Python.Sommertime.executor": "Run",
+    "Python.Starwars_print_stats.executor": "Run",
     "Python.Walmart_calculator.executor": "Run",
     "Python.algorytmus_übung.executor": "Run",
     "Python.append_vs_conactination.executor": "Run",
@@ -100,12 +102,17 @@
     "Python.while loops.executor": "Run",
     "Python.übungen inbuild functions.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Working__branch",
+    "git-widget-placeholder": "main",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.codio_movies">
-    <configuration name="Sommertime" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Übungen" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Starwars_print_stats">
+    <configuration name="Starwars_print_stats" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Masterschool" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,11 +121,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Übungen/Json_Übung" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Sommertime.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Übungen/Json_Übung/Starwars_print_stats.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -217,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Starwars_print_stats" />
         <item itemvalue="Python.codio_movies" />
         <item itemvalue="Python.codio_movie_data_bank" />
         <item itemvalue="Python.codio_find_words_romeo_and_juliet" />
         <item itemvalue="Python.algorytmus_übung" />
-        <item itemvalue="Python.Sommertime" />
       </list>
     </recent_temporary>
   </component>
@@ -371,7 +378,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729776908623</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="weite funktionen eingebaut">
+      <option name="closed" value="true" />
+      <created>1730894169713</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1730894169713</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
