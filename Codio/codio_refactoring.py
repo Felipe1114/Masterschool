@@ -28,7 +28,10 @@ def validate_prime(num_to_check) -> bool:
   return num_is_prime
 
 
-def find_first_num(number):
+def find_first_num(number) -> bool:
+  """
+
+  """
   for first_num in range(2, number):
     first_num_is_prime = validate_prime(first_num)
     is_first_num_prime(first_num, first_num_is_prime, number)
@@ -36,6 +39,12 @@ def find_first_num(number):
 
 
 def is_sum_of_two_primes(number):
+  """gets a number(int) and checks if the number is odd
+  Is the number even: find_first_num is called
+
+  Args:
+    number(int) a number in his range, we want to find all existing prime numbers
+  """
   if number % 2 == 1:
     return False
   else:
