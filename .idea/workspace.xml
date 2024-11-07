@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="init">
+    <list default="true" id="dee26c76-21cf-437f-8fcb-b652899a3816" name="Changes" comment="helb_your_teacher_abgeschlossen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codio/cdio_help_teachter2_requierements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Codio/cdio_help_teachter2_requierements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Codio/codio_help_your_teacher_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Codio/codio_help_your_teacher_2.py" afterDir="false" />
     </list>
     <list id="210aae2b-33b1-4ee4-9a01-2e36b8dbce1a" name="is_number_odd" comment="" />
     <list id="bd029442-3677-41b8-92b8-e46c18667c9b" name="remove_special_characters" comment="" />
@@ -70,43 +68,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.2students.executor": "Run",
-    "Python.Boolean übungen.executor": "Run",
-    "Python.Build_in_funktions.executor": "Run",
-    "Python.CRUD übung.executor": "Run",
-    "Python.Debugging.executor": "Run",
-    "Python.Debugging_2.executor": "Run",
-    "Python.Dictionary_übung.executor": "Run",
-    "Python.Griesbrei rechner.executor": "Run",
-    "Python.List übungen.executor": "Run",
-    "Python.Loop_übungen.executor": "Run",
-    "Python.Loops+.executor": "Run",
-    "Python.Range Übungen.executor": "Run",
-    "Python.Sommertime.executor": "Run",
-    "Python.Starwars_print_stats.executor": "Run",
-    "Python.Walmart_calculator.executor": "Run",
-    "Python.algorytmus_übung.executor": "Run",
-    "Python.append_vs_conactination.executor": "Run",
-    "Python.codio_calculatr.executor": "Run",
-    "Python.codio_find_words_romeo_and_juliet.executor": "Run",
-    "Python.codio_help_your_teacher_2.executor": "Run",
-    "Python.codio_movie_data_bank.executor": "Run",
-    "Python.codio_movies.executor": "Run",
-    "Python.codio_prime_minister.executor": "Run",
-    "Python.datetime übungen.executor": "Run",
-    "Python.foo.executor": "Run",
-    "Python.number_pyramyd.executor": "Run",
-    "Python.print_possible_pairs.executor": "Run",
-    "Python.test_file.executor": "Run",
-    "Python.while loops.executor": "Run",
-    "Python.übungen inbuild functions.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "help-your-teachte-2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.2students.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Boolean übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Build_in_funktions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CRUD übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Debugging.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Debugging_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dictionary_übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Griesbrei rechner.executor&quot;: &quot;Run&quot;,
+    &quot;Python.List übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loop_übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Loops+.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Range Übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sommertime.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Starwars_print_stats.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Walmart_calculator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.algorytmus_übung.executor&quot;: &quot;Run&quot;,
+    &quot;Python.append_vs_conactination.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_calculatr.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_find_words_romeo_and_juliet.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_help_your_teacher_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_movie_data_bank.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_movies.executor&quot;: &quot;Run&quot;,
+    &quot;Python.codio_prime_minister.executor&quot;: &quot;Run&quot;,
+    &quot;Python.datetime übungen.executor&quot;: &quot;Run&quot;,
+    &quot;Python.foo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.number_pyramyd.executor&quot;: &quot;Run&quot;,
+    &quot;Python.print_possible_pairs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_file.executor&quot;: &quot;Run&quot;,
+    &quot;Python.while loops.executor&quot;: &quot;Run&quot;,
+    &quot;Python.übungen inbuild functions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;help-your-teachte-2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Übungen" />
@@ -411,7 +409,47 @@
       <option name="project" value="LOCAL" />
       <updated>1730899983227</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="helb your teacher 2 angefangen">
+      <option name="closed" value="true" />
+      <created>1730901934874</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730901934874</updated>
+    </task>
+    <task id="LOCAL-00022" summary="basic funktions in codio_helb_your_teacher_2 eingebaut">
+      <option name="closed" value="true" />
+      <created>1730917610367</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1730917610367</updated>
+    </task>
+    <task id="LOCAL-00023" summary="over all average grades einebaut">
+      <option name="closed" value="true" />
+      <created>1730919234875</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1730919234875</updated>
+    </task>
+    <task id="LOCAL-00024" summary="calculate_failing_grades erstellt; noc fertig machen">
+      <option name="closed" value="true" />
+      <created>1730933151164</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1730933151164</updated>
+    </task>
+    <task id="LOCAL-00025" summary="helb_your_teacher_abgeschlossen">
+      <option name="closed" value="true" />
+      <created>1730970247942</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1730970247942</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -441,7 +479,12 @@
     <MESSAGE value="weite funktionen eingebaut" />
     <MESSAGE value="helb_teachter_projekt aufgesetzt" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="helb your teacher 2 angefangen" />
+    <MESSAGE value="basic funktions in codio_helb_your_teacher_2 eingebaut" />
+    <MESSAGE value="over all average grades einebaut" />
+    <MESSAGE value="calculate_failing_grades erstellt; noc fertig machen" />
+    <MESSAGE value="helb_your_teacher_abgeschlossen" />
+    <option name="LAST_COMMIT_MESSAGE" value="helb_your_teacher_abgeschlossen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
