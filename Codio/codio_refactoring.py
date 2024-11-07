@@ -1,28 +1,33 @@
 def is_sum_of_two_primes(number):
   if number % 2 == 1:
     return False
-  for i in range(2, number):
-    good = True
+  # hier muss die nächste funktion hin
+  for first_num in range(2, number):
+    first_num_is_prime = True
     # check if i is a prime
-    x = 2
-    while x<i:
-      if i % x == 0:
-        good = False
-      x += 1
-    if good:
+    divisor = 2
+    while divisor<first_num:
+      if first_num % divisor == 0:
+        first_num_is_prime = False
+      divisor += 1
+    if first_num_is_prime:
       # i is a prime, now check if j=x-i is prime
-      j = number - i
-      if j >= 2:#j must be greater or equal 2 to be prime
-        good2 = True
-        x = 2
-        while x < j:
-          if j % x == 0:
-            good2 = False
-          x += 1
-        if good2:
-          print(f"The number {number} equals to the sum of {i} and {j}")
+      sec_num = number - first_num
+      if sec_num >= 2:#j must be greater or equal 2 to be prime
+        sec_num_is_prime = True
+        divisor = 2
+        while divisor < sec_num:
+          if sec_num % divisor == 0:
+            sec_num_is_prime = False
+          divisor += 1
+        if sec_num_is_prime:
+          print(f"The number {number} equals to the sum of {first_num} and {sec_num}")
   return True
 
+def main():
+  Number = int(input("Enter a number:"))
+  is_sum_of_two_primes(Number)
 
-Number = int(input("Enter a number:"))
-is_sum_of_two_primes(Number)
+
+if __name__ == "__main__":
+  main()
