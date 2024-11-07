@@ -43,3 +43,6 @@ result after programm finished:
 Student Information:
 Student: peter, Best Grade: 4.0, Average Grade: 4.00
 
+
+Failing grades per student:
+Ron: 1 failing grade(s)

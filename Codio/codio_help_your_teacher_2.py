@@ -1,4 +1,43 @@
-def calculate_failing_grades(students):
+def get_count_faling_grades(student_info):
+    """checks, if one or both of the two student grades
+    are under 55.
+    Gives back 1 or 2 if 1 or 2 grades ar under 55
+
+    Args:
+        student_info(dict): student info
+
+    Returns:
+        count_faling_grades(int): how many grades are under 55 (0, 1 or 2)
+
+    """
+    math_grade = student_info["math grade"]
+    english_grade = student_info["english grade"]
+    count_failng_grades = 0
+    if math_grade < 55 and english_grade < 55:
+        count_failng_grades = 2
+    if math_grade < 55 or english_grade < 55:
+        count_failng_grades = 1
+    return count_failng_grades
+
+
+def get_key_and_val_from_student_info(student_info) -> tuple:
+    """looks of the vals of math_grade and english_grade
+    if the vals are < 55, the var failing_grade is += 1
+    gives back a tuple of the student name and his count of failng grades
+
+    Args:
+        student_info(dict): dictionary of student info
+
+    Returns:
+        student_name(str): name of student
+        faling_grades(int): count of faling grades
+    """
+    student_name = student_info["student"]
+    count_faling_grades = get_count_faling_grades(student_info)
+    return student_name, count_faling_grades
+
+
+def print_failing_grades(students):
     """gets as input a dict with stutend info
     takes the grades of each student and checks, if grade is failed
     gives back a dict, where each key is student name
@@ -14,23 +53,14 @@ def calculate_failing_grades(students):
         student_name2 . failing_grades
         }
     """
-    print("In calculate_failing_grades")
-    subject_list = ["english_grade", "math_grade"]
+    print("\nFailing grades per student:")
     failing_grades = {}
-    for dict in students:
-        student_name = "no_name"
-        sum_failng_grades = 0
-        for key in dict:
-            if key == "student":
-                student_name = dict[key]
-                print(student_name)
-            else:
-                #eigene funktion?
-                if dict[key] < 55:
-                    sum_failng_grades += 1
-            # hier irgenwo muss failing_grades der key hinzugefügt werden.
-            # ich weiß nurnoch nicht genau wo...
-    print(failing_grades)
+    for student_info in students:
+        student_name, faling_grade = get_key_and_val_from_student_info(student_info)
+        failing_grades[student_name] = faling_grade
+        count_faling_grade = failing_grades[student_name]
+        print(f"{student_name}: {count_faling_grade} faling grade(s)")
+
 
 def get_all_grades_from_subject(subject:str, students:list) -> list:
     grade_list = []
@@ -64,8 +94,6 @@ def print_average_grades(students:list) -> dict:
           f"English: {average_english}\n"
           f"Math: {average_math}\n\n"
           f"Overall average grade across all subjects: {over_all_average}")
-
-
 
 
 def make_list_of_grades(student_info:dict) -> list:
@@ -192,7 +220,7 @@ def main():
     student_info_list = make_student_info_list()
     print_student_info(student_info_list)
     print_average_grades(student_info_list)
-    print(calculate_failing_grades(student_info_list))
+    print_failing_grades(student_info_list)
 
 
 if __name__ == "__main__":
