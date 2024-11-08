@@ -1,0 +1,9 @@
+
+
+1 main()
+2  is_sum_of_two_primes(number)
+3 x   find_first_num(number)
+4        is_first_num_prime(first_num, first_num_is_prime, number)
+5            if_sec_num_greater_equal_two(first_num, number, sec_num)
+6                print_result(first_num, number, sec_num, sec_num_is_prime)
+7 x                  find_double_pair_of_primes(first_num, sec_num)
