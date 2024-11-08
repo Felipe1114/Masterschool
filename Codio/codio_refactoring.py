@@ -17,7 +17,6 @@ def find_double_pair_of_primes(first_num, sec_num):
       return True
   except KeyError:
     dict_prime_pairs[first_num] = sec_num
-    print(dict_prime_pairs)
     return False
 
 
