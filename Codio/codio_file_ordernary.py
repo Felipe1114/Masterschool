@@ -1,7 +1,5 @@
 import os
-# Am ende wird kein pfad gefunden. waru?!
-
-# path to directory: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp/All_pdfs
+# path to directory: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp
 # path to new Directory: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp/invoices
 # path to months: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp/invoices/"month"
 def create_new_file_name(new_parent_dir, month, file_name) -> str:
@@ -11,46 +9,37 @@ def create_new_file_name(new_parent_dir, month, file_name) -> str:
         new_parent_dir(str): the new parent dir für for all files
         month(str): the last ending of each file (after the last "_", before the suffix)
     """
-    master_dir = os.getcwd().split("/")[-1]
-    new_file_name = os.path.join('Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio',
-                                 master_dir, new_parent_dir, month, file_name)
+    print(f"I will make out of these words a new file name:\n"
+          f"{new_parent_dir, month, file_name}")
+    new_file_name = os.path.join(new_parent_dir, month, file_name)
     return new_file_name
 
 
-def move_files(old_dir, new_parent_dir):
+def move_files(list_of_files, new_parent_dir):
     """Gets a path and creates a list of all files in this path.
     Changes the name of each file in list, wich for loop
+    If the file.split("_") is shorter than 3, it is a false file, or has a false name
 
     Args:
-        old_dir(str): name of dir with files we want to move to other dir
+        list_of_files(list): list of all files to rename
         new_parent_dir(str): name of dir, where the files will be moved in
     """
-    files_to_move = os.listdir(old_dir)
-    for file in files_to_move:
-        os.rename('Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp/All_pdfs/' + file, create_new_file_name(new_parent_dir, get_month(file), file))
+    for file in list_of_files:
+        if len(file.split("_")) < 3:
+            continue
+        else:
+            os.rename(file, create_new_file_name(new_parent_dir, get_month(file), file))
 
 
-def does_path_exist(dir_content, path):
-    if path in dir_content:
-        pass
-    else:
-        raise FileNotFoundError("Dir does not exist")
+def move_files_to_new_dir(list_of_content, new_parent_dir):
+    """Renames Files
 
-
-def move_files_to_new_dir(parent_dir):
-    aktual_dir = os.getcwd()
-    print(f"You are now in {aktual_dir}")
-    dir_content = os.listdir(aktual_dir)
-    print(f"The content of this dir is: \n{dir_content}")
-    while True:
-        try:
-            path = input("From wich dir you want to move files?\n(type in dir name from list): ")
-            does_path_exist(dir_content, path)
-            break
-        except FileNotFoundError as e:
-            print(e)
-    move_files(path, parent_dir)
-
+    Args:
+        list_of_content(list): contais all Files, we want to rename
+        new_parent_dir(str): 
+    """
+    print(f"The content of this dir is: \n{list_of_content}")
+    move_files(list_of_content, new_parent_dir)
 
 
 def end_programm() -> None:
@@ -148,29 +137,22 @@ def create_new_dir_structure(file_list) -> str:
     return new_dir_name
 
 
-def get_list_of_content(path) -> list:
-    """Gets all content from folder path into a list
-
-    Args:
-        path(str): the name of a directory
+def get_list_of_content() -> list:
+    """Gets all content from current dir(Uni_corp) into a list
 
     Returns:
         content_lst(list): a list of all files in the directory
     """
     while True:
         try:
-            content_lst = os.listdir(path)
+            content_lst = os.listdir()
             return content_lst
         except FileNotFoundError:
             print("Path does not exist. Type in a new path")
 
 
-def get_directory_path() -> str:
-    path = input("From wich dir, you want to order files?\n(The path has to exist): ")
-    return path
-
-
 def is_actual_dir_correct():
+    os.chdir("Uni_corp")
     actual_dir = os.getcwd()
     y_or_n = input(f"Hello, your actual location is:\n{actual_dir}\nAre you in the correct location?(y/n): ")
     if y_or_n == "y":
@@ -191,9 +173,9 @@ def main() -> None:
     print("=====File_ordering_programm=====\n"
           "The Programm will order all files from one dir to another dir")
     is_actual_dir_correct()
-    list_of_content = get_list_of_content(get_directory_path())
+    list_of_content = get_list_of_content()
     new_parent_dir = create_new_dir_structure(list_of_content)
-    move_files_to_new_dir(new_parent_dir)
+    move_files_to_new_dir(list_of_content ,new_parent_dir)
 
 
 if __name__ == "__main__":
