@@ -1,7 +1,9 @@
 import os
-# path to directory: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp
-# path to new Directory: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp/invoices
-# path to months: /Users/felipepietzsch/Masterschool/Ohne Titel/Masterschool/Codio/Uni_corp/invoices/"month"
+"""
+file ist nicht in der richten ordner structur, bzw. existiert kein ordner, und files, 
+mit denen der code funktionieren würde
+"""
+
 def create_new_file_name(new_parent_dir, month, file_name) -> str:
     """makes new file name and returns it
 
