@@ -1,8 +1,10 @@
-with open("grades.csv", "r") as fileobj:
-    data = fileobj.read()
+with open("orig.txt", "r") as fileobj:
+    datalines = fileobj.read()
 
-with open("grades2.csv", "w") as fileobj:
-    fileobj.write(data)
-    for i in range(10):
-        fileobj.write(f"das ist die{i+1}. Zeile, die hinzugefügt wurde")
 
+with open("reverse.txt", "w") as fileobj:
+    new_text = ""
+    for i in range(len(datalines)-1, -1, -1):
+        new_text = new_text + f"{datalines[i]}"
+    new_text = new_text.replace(" ", "\n")
+    fileobj.write(new_text)

@@ -1,9 +1,18 @@
+from urllib.parse import urlparse
+
 import requests
 import time
+from urllib.parse import urlparse
+
+url = "https://software-engineering.masterschool.com/production-pages/the-big-crash-classwork-2"
+parsed_url = urlparse(url)
+
+
+
 
 # (z30) http(s) fehler: nicht alle websites haben das https protokoll -> auch http protokkolle erlauben
 # (z22) eingabe von 0 / -x  werte: int(intput(...) -> wenn nicht int -> except ValueError
-# wenn website nicht existiert hängt sich programm auf:
+# (X) wenn website nicht existiert hängt sich programm auf:
 # eingabe von float/string( value error -> nicht int):
 # weniger als 3 gültige websites (index error):
 
@@ -34,7 +43,7 @@ def get_multiple_url_inputs(num_websites):
     urls = []
     for i in range(num_websites):
         url = input(f"Please enter the URL of website {i+1}: ")
-        if url.startswith("https"): # was ist wenn kein https sondern http genutzt wird
+        if url.startswith("https") or startswith("http"): # was ist wenn kein https sondern http genutzt wird
             urls.append(url)
 
     if not urls:
