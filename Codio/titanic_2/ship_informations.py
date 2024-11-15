@@ -1,7 +1,4 @@
 import json
-
-from pygments.lexers.julia import allowed_variable
-
 # basic interactions
 '''with open("ships_data.json", "r") as fileobj:
     data = json.load(fileobj)
@@ -16,18 +13,11 @@ nach jeder funktion geht es immer wieder zur menu funktion
 """
 
 def main():
-    """
-    Vars:
-        ship_lst: all ship names
-        sum_ships(int): sum of all ships
-        ship_names_lst: all names of ships in Json file
-        num_of_countrys(dict): dict of countrys, key=country name, val=sum of country
-
-
+    """Calls menu()
     """
     ship_informations = get_all_variables()
-
-    pass
+    while True:
+        menu(ship_informations)
 
 
 
@@ -88,16 +78,16 @@ def get_all_variables() -> dict:
 #====================command funktions
 
 
-def print_sorted_list(list) -> None:
-    print("===All ship names===\n")
+def print_sorted_list(list:list) -> None:
     concatenated_str = ""
-    list.sort()
-    for sub_string in list:
+    sorted_list = sorted(list)
+    #list.sort())
+    for sub_string in sorted_list:
         concatenated_str = concatenated_str + sub_string + "\n"
     print(concatenated_str)
 
 
-def print_sorted_dict(given_dict:dict) -> None:
+def print_sorted_dict(given_dict:dict, range) -> None:
     """prints the best key/val combination, of a given dict.
     takes an int form user, for the <num of best key/val>
     sorts the given dict, than prints it
@@ -106,18 +96,18 @@ def print_sorted_dict(given_dict:dict) -> None:
         given_dict(dict)
     """
     # try: einfügen, max anzahl an iteratiojns = len(dictionary)
-    len_sorted_dict = get_int_from_user("dictionary")
+
     dict_copy = given_dict.copy()
-    sorted_dict = sort_dict(len_sorted_dict, dict_copy)
+    sorted_dict = sort_dict(range, dict_copy)
     print_dict(sorted_dict)
 
 
-def sort_dict(len_soted_dict:int, dictionary:dict) -> dict:
+def sort_dict(len_new_dict:int, dictionary:dict) -> dict:
     """Sorts the keys and values of a dict in a new dict, from best to less.
     Only works, if values:int
     
     Args:
-        len_soted_dict(int): defines, how long the sorted dict is; 
+        len_new_dict(int): defines, how long the sorted dict is;
         for the ten best vals num_of_iteration = 10;
         never should be higher, than the len, of Arg:dictionary
         dictionary(dict): the dict, wich will be sorted
@@ -127,7 +117,7 @@ def sort_dict(len_soted_dict:int, dictionary:dict) -> dict:
     """
     # try: einfügen, max anzahl an iteratiojns = len(dictionary)
     sorted_dict = {}
-    for i in range(len_soted_dict):
+    for i in range(len_new_dict):
         best_val = 0
         best_key = ""
         for key in dictionary:
@@ -143,39 +133,63 @@ def print_dict(dict) -> None:
     for key in dict:
         print(f"{key} : {dict[key]}")
 
+#===============input_functions
 
-def get_int_from_user(data_structur:str) -> int:
-    """takes an int from user; will be used for the range, in a for loop
 
-    Args:
-        data_structur(str): Name of an iterable data type(list, dict)
-
-    Returns:
-        range(int): will be used for the range, in a for loop
+def get_input() -> tuple:
+    """takes user input
     """
-    while True:
-        try:
-            range = int(input(f"How long should the {data_structur} be?(int): "))
-            break
-        except ValueError as e:
-            print(f"Not an integer: {e}, type an integer")
-    return range
+    user_input = input()
+    command, range = slice_input(user_input)
+    return command, range
+
+# index error. wenn kein integer am ende, gibt es beim split(" ") nur ein element in der list
+# problem beheben
+def slice_input(input):
+
+    splited_input = input.split(" ")
+    try:
+        command = splited_input[0]
+        range = int(splited_input[1])
+    except IndexError:
+        range = None
+    finally:
+        return command, range
 
 
 #====================== menu functions
-#command help:
 def command_help():
     print("Available commands:\nhelp\nshow_countries\ntop_countries <num_countries>")
-#command show_countrys
-def command_show_countrys(ship_informations:dict):
-    country_dict = ship_informations[]
+
+
+def command_print_country_names(ship_informations:dict):
+    country_dict = ship_informations["num_of_countrys"]
     country_names = country_dict.keys()
     print_sorted_list(country_names)
 
 
-#command top_countries <num_countries>
+def command_print_top_countries(ship_informations:dict, range):
+    country_dict = ship_informations["num_of_countrys"]
+    print_sorted_dict(country_dict, range)
 
-#menu
+
+def menu(ship_informations):
+    command, range = get_input()
+    if range == None:
+        ohter_commands(ship_informations, command)
+    if type(range) == int:
+        if command == "top_countries":
+            command_print_top_countries(ship_informations, range)
+
+
+def ohter_commands(ship_informations, command):
+    if command == "show_countries":
+        command_print_country_names(ship_informations)
+    elif command == "help":
+        command_help()
+    elif command == "exit":
+        exit()
+
 
 if __name__ == "__main__":
     main()
