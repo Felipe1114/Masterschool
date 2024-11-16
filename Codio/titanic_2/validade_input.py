@@ -11,12 +11,15 @@ COMMANDS_DICT = {
 
 
 def main():
-  print("before validade")
-  validade(input())
-  print("after validade")
+  validate(input())
 
 
 def create_command_list():
+  """gives back a list of all possible commands
+
+  Returns:
+    possible_commands(dict): all possible commands in a list
+    """
   CD = COMMANDS_DICT
   nc = "num_commands"
   bc = "basic_commands"
@@ -27,6 +30,11 @@ def create_command_list():
 
 
 def split_input(input):
+  """splits input and looks for wrong input
+
+  Args:
+    input(str): given input from user
+  """
   input_list = input.split(" ")
   possible_commands = create_command_list()
   if len(input_list) > 2:
@@ -48,10 +56,13 @@ def split_input(input):
       print(e)
 
 
-def validade(user_input="None"):
+def validate(user_input="None"):
   """
-  splites up input and tests variable cases,
-  if no Error is raised validade returns 'True'.
+  splits up input and tests variable cases,
+  if no Error is raised validate returns 'True'.
+
+  Args:
+    user_input(str): the input from user
   """
   try:
     split_input(user_input)
