@@ -5,7 +5,7 @@ Args:
     Time(float): zeit die user für eine eingabe gebraucht hat
     distance(float): entfernung zur landmarke
     pints(distance * time): finale punkte
-    runde
+    runde(die aktuelle zahl der runden)
 
 alle drei werte in jeweils ein dict packen key = round, val = wert
 fpr alle drei dicts folgende werte ausrechnen:
@@ -24,3 +24,11 @@ Args:
 aus liste von urls wird eine url ausgewählt.
 die url, die ausgewählt wird, aus der liste löschen
 
+
+bsp. liste:
+runde, entferung, zeit, punkte
+liste 2 = [
+[1, 34, 22, 34x22, "url1"]
+[2, 45, 52, 45x52, "url2"]
+[3, 55, 11, 55x11, "url3"]
+]
