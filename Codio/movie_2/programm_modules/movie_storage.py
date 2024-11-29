@@ -1,5 +1,6 @@
 import json as js
 DATAPATH = "../programm_files/movie_storage.json"
+# der punkt vor /programm mus noch weg, damit es ind er main funktion funktioniert
 
 
 def get_movies() -> dict:
@@ -34,7 +35,7 @@ def save_movies(movies):
     js.dump(movies, json_data, indent=4)
 
 
-def add_movie(title:str, year:int, rating:float) -> dict:
+def add_movie(title:str, year:int, rating:float):
   """
   Adds a movie to the movies database.
   Loads the information from the JSON file, add the movie,
@@ -70,4 +71,3 @@ def update_movie(title, rating):
 
 
 
-print(get_movies())

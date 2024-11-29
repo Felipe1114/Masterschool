@@ -1,5 +1,5 @@
 import random
-from programm_modules import movie_storage as mov_strg
+from programm_modules import movie_storage as ms
 
 
 def search_movie(movies:dict):
@@ -411,18 +411,7 @@ def main():
   Returns:
   none
   """
-movies = {
-  "The Shawshank Redemption": 9.5,
-  "Pulp Fiction": 8.8,
-  "The Room": 3.6,
-  "The Godfather": 9.2,
-  "The Godfather: Part II": 9.0,
-  "The Dark Knight": 9.0,
-  "12 Angry Men": 8.9,
-  "Everything Everywhere All At Once": 8.9,
-  "Forrest Gump": 8.8,
-  "Star Wars: Episode V": 8.7
-}
+movies = ms.get_movies()
 # print_menu gibt 1 - 8 aus, als string
 print("********** My Movies Database **********")
 execute_user_input(int(print_menu()), movies)
