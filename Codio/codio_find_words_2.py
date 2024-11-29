@@ -48,6 +48,7 @@ def removoe_spec_characters():
         str_without_spec_char = str_without_spec_char.replace(char, "")
     return str_without_spec_char
 
+
 def main():
     '''
     first: List with all Special characters, wich should be removed from the text.

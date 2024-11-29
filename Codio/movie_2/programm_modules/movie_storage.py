@@ -1,5 +1,5 @@
 import json as js
-DATAPATH = "movie_storage.json"
+DATAPATH = "../programm_files/movie_storage.json"
 
 
 def get_movies() -> dict:
@@ -67,3 +67,7 @@ def update_movie(title, rating):
   movies = get_movies()
   movies[title]["rating"] = rating
   save_movies(movies)
+
+
+
+print(get_movies())
