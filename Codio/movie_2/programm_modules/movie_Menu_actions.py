@@ -1,6 +1,5 @@
 import random
 import movie_storage as ms
-from Codio.movie_2.codio_movies_2 import avergae
 
 KEY_FOR_YEAR = "year"
 KFY = KEY_FOR_YEAR
@@ -83,10 +82,10 @@ def random_movie(movies):
 
 
 def print_movie_stats(movies):
-  average = avergae(movies)
-  median = median(movies)
-  best_movies = find_best_movies(movies)
-  worst_movies = find_worst_movies(movies)
+  average = average(movies) # warum sind average und median nicht richtig verlinkt?
+  median = (movies)
+  best_movies = get_best_movies(movies)
+  worst_movies = get_worst_movies(movies)
   print()
   print("The statistics are:")
   print(f"Average of rating: {average:.2f}")
@@ -134,15 +133,24 @@ def median(movies):
 
 def get_best_movies(movies):
   sorted_movie_list = sort_movies_by_rating(movies)
-  # bester film rating nehmen
-  # alle filme, deren rating gleich ist, wie erster film werden returned
+  sml = sorted_movie_list
+  best_rating = sml[0][KFR]
+  best_movies = []
+  for i in range(len(sml)):
+    if sml[i][KFR] == best_rating:
+      best_movies.append(sml[i])
+  return best_movies
 
 
 def get_worst_movies(movies):
   sorted_movie_list = sort_movies_by_rating(movies)
-  # schlechtestes film rating nehmen
-  # alle filme, deren rating gleich ist, wie erster film werden returned
-
+  sml = sorted_movie_list
+  worst_rating = sml[-1][KFR]
+  worst_movies = []
+  for i in range(len(sml)):
+    if sml[i][KFR] == worst_rating:
+      worst_movies.append(sml[i])
+  return worst_movies
 
 if __name__ == "__main__":
   main()
