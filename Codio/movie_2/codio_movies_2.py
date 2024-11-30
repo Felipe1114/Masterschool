@@ -1,7 +1,7 @@
 import random
 from programm_modules import movie_storage as ms
 
-
+#========================DELETE unten===================================
 def search_movie(movies:dict):
   """The user gives an input(movie name), than the funktion prints the movie, with its ranking
 
@@ -29,21 +29,6 @@ def print_single_ranked_movie(key, movies: type(dict)):
           None
       """
   print(key, movies[key], sep = " : ")
-
-
-def print_ranked_movies(dic_sorted_movies):
-  """Prints all movies, ranked from the best to the worst.
-
-      Args:
-          dic_sorted_movies (dict): A dictionary of movies sorted by rating in descending order.
-
-      Returns:
-          None
-      """
-  print("\n")
-  print("Here are al Movies, ranked from best to worst:")
-  for key in dic_sorted_movies:
-    print(key, dic_sorted_movies[key], sep = " : ")
 
 
 def movies_sorted(movies):
@@ -100,6 +85,20 @@ def make_movie_list(movies):
   for key in movies:
     movie_list.append(key)
   return movie_list
+
+
+#========================DELETE oben ===================================
+
+
+
+
+
+
+
+
+
+
+
 
 
 def make_rating_list(movies):

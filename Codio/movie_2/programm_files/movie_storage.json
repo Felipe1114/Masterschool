@@ -1,42 +1,12 @@
-{
-    "The Shawshank Redemption": {
-        "rating": 9.5,
-        "year": 1994
-    },
-    "Pulp Fiction": {
-        "rating": 8.8,
-        "year": 1994
-    },
-    "The Room": {
-        "rating": 3.6,
-        "year": 2003
-    },
-    "The Godfather": {
-        "rating": 9.2,
-        "year": 1972
-    },
-    "The Godfather: Part II": {
-        "rating": 9.0,
-        "year": 1974
-    },
-    "The Dark Knight": {
-        "rating": 9.0,
-        "year": 2008
-    },
-    "12 Angry Men": {
-        "rating": 8.9,
-        "year": 1957
-    },
-    "Everything Everywhere All At Once": {
-        "rating": 8.9,
-        "year": 2022
-    },
-    "Forrest Gump": {
-        "rating": 8.8,
-        "year": 1994
-    },
-    "Star Wars: Episode V": {
-        "rating": 8.7,
-        "year": 1980
-    }
-}
+[
+    {"name": "The Shawshank Redemption", "year": 1994, "rating": 9.5},
+    {"name": "Pulp Fiction", "year": 1994, "rating": 8.8},
+    {"name": "The Room", "year": 2003, "rating": 3.6},
+    {"name": "The Godfather", "year": 1972, "rating": 9.2},
+    {"name": "The Godfather: Part II", "year": 1974, "rating": 9.0},
+    {"name": "The Dark Knight", "year": 2008, "rating": 9.0},
+    {"name": "12 Angry Men", "year": 1957, "rating": 8.9},
+    {"name": "Everything Everywhere All At Once", "year": 2022, "rating": 8.9},
+    {"name": "Forrest Gump", "year": 1994, "rating": 8.8},
+    {"name": "Star Wars: Episode V", "year": 1980, "rating": 8.7}
+]
