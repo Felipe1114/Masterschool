@@ -69,7 +69,7 @@ def sort_movies_by_name(movies):
   return sorted_movies
 
 
-def random_movie(movies):
+def print_random_movie(movies):
   """Displays a random movie from movies.
 
       Args:
@@ -81,26 +81,30 @@ def random_movie(movies):
   print(f"{random_movie[KFN]}({random_movie[KFY]}): {random_movie[KFR]}")
 
 
-def print_movie_stats(movies):
-  average = average(movies) # warum sind average und median nicht richtig verlinkt?
-  median = (movies)
+def get_movie_stats(movies):
+  average = get_average(movies)
+  median = get_median(movies)
   best_movies = get_best_movies(movies)
   worst_movies = get_worst_movies(movies)
+  print_movie_stats(average, best_movies, median, worst_movies)
+
+
+def print_movie_stats(average, best_movies, median, worst_movies):
   print()
   print("The statistics are:")
   print(f"Average of rating: {average:.2f}")
   print(f"The median of rating is: {median}")
   print("the best movie/s is/are:")
-  print_movies_and_ratings(best_movies)
+  print_movies(best_movies)
   print("the worst movie/s is/are:")
-  print_movies_and_ratings(worst_movies)
-  execute_user_input(int(print_menu(back_to_menu())), movies)
+  print_movies(worst_movies)
 
 
-def average(movies):
+def get_average(movies):
   ratings = get_sorted_rating_list(movies)
   average = sum(ratings) / len(ratings)
   return average
+
 
 def get_sorted_rating_list(movies):
   sorted_list = sort_movies_by_rating(movies)
@@ -110,7 +114,7 @@ def get_sorted_rating_list(movies):
   return rating_list
 
 
-def median(movies):
+def get_median(movies):
   """calculates the median from all ratings(values) of movies(dict)
 
         Args:
@@ -151,6 +155,27 @@ def get_worst_movies(movies):
     if sml[i][KFR] == worst_rating:
       worst_movies.append(sml[i])
   return worst_movies
+
+
+def print_movies_by_rating(movies):
+  sorted_movies = sort_movies_by_rating(movies)
+  for dict in sorted_movies:
+    print_random_movie(dict)
+
+
+def print_movies_by_year(movies):
+  sorted_movies = sort_movies_by_year(movies)
+  for dict in sorted_movies:
+    print_random_movie(dict)
+
+
+def filer_movies(movies):
+  """soll filme nach
+    - rating filtern (zeige alle filme rating über x an
+    - year filtern (zeige alle filme ab 2001)
+    - year filtern (zeige alle filme vor 2009)"""
+  pass
+
 
 if __name__ == "__main__":
   main()
