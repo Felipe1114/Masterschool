@@ -169,13 +169,27 @@ def print_movies_by_year(movies):
     print_random_movie(dict)
 
 
-def filer_movies(movies):
-  """soll filme nach
-    - rating filtern (zeige alle filme rating über x an
-    - year filtern (zeige alle filme ab 2001)
-    - year filtern (zeige alle filme vor 2009)"""
-  pass
+def filter_moives(movies):
+  minimum_rating, start_year, end_year = get_filter_input()
+  filtred_list = []
+  filter_rating(movies, minimum_rating, filtred_list)
 
+
+def get_filter_input():
+  minimum_rating = input("Enter minimum rating (leave blank for no minimum rating): ")
+  start_year = input("Enter start year (leave blank for no start year): ")
+  end_year = input("Enter end year (leave blank for no end year): ")
+  return minimum_rating, start_year, end_year
+
+# nicht neue lite machen, sondern movies kopieren und dann elemente aus der lsite löschen
+def filter_rating(movies, minimum_rating, filtred_list):
+  for dict in movies:
+    if dict[KFR] >= minimum_rating:
+      filtred_list.append(dict)
+
+
+def filter_year:
+  #
 
 if __name__ == "__main__":
   main()
