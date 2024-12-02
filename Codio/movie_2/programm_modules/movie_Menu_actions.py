@@ -172,22 +172,7 @@ def print_movies_by_year(movies):
     print_random_movie(dict)
 
 
-# hier müssen end_year und start_year noch in eine int umgewandelt werden
-def get_filter_input():
-  while True:
-    try:
-      minimum_rating = input("Enter minimum rating (leave blank for no minimum rating): ")
-      start_year = input("Enter start year (leave blank for no start year): ")
-      end_year = input("Enter end year (leave blank for no end year): ")
-      if len(minimum_rating) > 0:
-        minimum_rating = float(minimum_rating)
-      if len(start_year) > 0:
-        start_year = int(start_year)
-      if len(end_year) > 0:
-        end_year = int(end_year)
-      return minimum_rating, start_year, end_year
-    except ValueError as e:
-      print(f"Input must be empty or an number: {e}")
+
 
 
 
@@ -202,6 +187,27 @@ def filter_movies(movies):
   elif len(end_year) == 0: filter_by_start_year(movies_copy, start_year)
 
   else: filter_by_start_and_end_year(movies_copy, start_year, end_year)
+  return movies_copy
+
+
+def get_filter_input():
+  while True:
+    try:
+      minimum_rating = input("Enter minimum rating (leave blank for no minimum rating): ")
+      start_year = input("Enter start year (leave blank for no start year): ")
+      end_year = input("Enter end year (leave blank for no end year): ")
+
+      if len(minimum_rating) > 0:
+        minimum_rating = float(minimum_rating)
+      if len(start_year) > 0:
+        start_year = int(start_year)
+      if len(end_year) > 0:
+        end_year = int(end_year)
+
+      return minimum_rating, start_year, end_year
+
+    except ValueError as e:
+      print(f"Input must be empty or an number: {e}")
 
 
 def filter_rating(movies_copy, minimum_rating):
@@ -215,6 +221,7 @@ def filter_rating(movies_copy, minimum_rating):
   for i in range(len(movies_copy)):
     if movies_copy[i][KFR] < minimum_rating:
       del movies_copy[i]
+
   return movies_copy
 
 
