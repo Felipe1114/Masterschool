@@ -42,6 +42,7 @@ def add_movie():
   movies = get_movies()
   new_movie = {}
 
+  #kann man in "movie_Menu_actions" verlagern
   while True:
     try:
       new_movie[KFN] = input("Type in a movie name: ")
@@ -64,28 +65,27 @@ def delete_movie():
   """
   movies = get_movies()
 
-  while True:
-    try:
-      movie_title = mma.get_name_input()
-      mma.is_name_in_movies(movie_title, movies)
-      break
-    except ValueError as e:
-      print(e)
+  movie_title = mma.get_movie_name(movies)
 
   searched_dict, index = find_dict_by_name(movies, movie_title)
   del movies[index]
   save_movies(movies)
 
 
-def update_movie(title:str, rating:float):
+
+def update_movie():
   """
   Updates a movie from the movies database.
   Loads the information from the JSON file, updates the movie,
   and saves it. The function doesn't need to validate the input.
   """
   movies = get_movies()
-  searched_dict, index = find_dict_by_name(movies, title)
-  movies[index][KFR] = rating
+
+  movie_name = mma.get_movie_name(movies)
+  movie_rating = mma.get_movie_rating()
+
+  searched_dict, index = find_dict_by_name(movies, movie_name)
+  movies[index][KFR] = movie_rating
   save_movies(movies)
 
 

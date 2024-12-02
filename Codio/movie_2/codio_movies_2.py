@@ -70,7 +70,12 @@ def main():
   operations ={
     1 : mma.list_movies(movies),
     2 : ms.add_movie(),
-    3 : ms.delete_movie()
+    3 : ms.delete_movie(),
+    4 : ms. update_movie(),
+    5 : mma.get_movie_stats(movies),
+    6 : mma.print_random_movie(movies),
+    7 : mma.search_movie(movies),
+    8 : mma.print_movies_sorted_by_rating(movies)
   }
   # print_menu gibt 1 - 8 aus, als string
   print("********** My Movies Database **********")

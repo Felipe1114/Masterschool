@@ -335,7 +335,7 @@ def filter_by_start_and_end_year(movies_copy, start_year, end_year):
   return movies_copy
 
 
-def get_name_input():
+def get_user_input_for_name():
   """takes from user a movie name
 
   :return:
@@ -361,6 +361,28 @@ def is_name_in_movies(movie_name, movies):
   else:
     raise ValueError("Error: Movie name is not in movie list!")
 
+def get_movie_name(movies):
+  """gets movie name by user input and valides it
+
+  :param movies: a list of dictionaries with movie informations
+  :return: the validated movie title
+  """
+  while True:
+    try:
+      movie_title = get_user_input_for_name()
+      is_name_in_movies(movie_title, movies)
+      break
+    except ValueError as e:
+      print(e)
+  return movie_title
+
+def get_movie_rating():
+  while True:
+    try:
+      movie_rating = float(input("Type in your rating(float): "))
+      return movie_rating
+    except ValueError as e:
+      print(f"Input must be a float: {e}")
 
 if __name__ == "__main__":
   main()
