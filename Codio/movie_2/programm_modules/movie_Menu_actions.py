@@ -27,10 +27,12 @@ def search_movie(movies:list):
           None
       """
   while True:
+
     try:
       searched_name = input("Wich movie are you searching for?: ")
       searched_movie, index = ms.find_dict_by_name(movies, searched_name)
       print_single_movie(searched_movie)
+
     except ValueError as e:
       print("Error:", e)
 
@@ -73,6 +75,7 @@ def print_random_movie(movies):
       """
   random_index = random.randrange(len(movies))
   random_movie = movies[random_index]
+
   print("Here is a ranodm movie out of the Database:")
   print(f"{random_movie[KFN]}({random_movie[KFY]}): {random_movie[KFR]}")
 
@@ -86,6 +89,7 @@ def get_movie_stats(movies):
   median = get_median(movies)
   best_movies = get_best_movies(movies)
   worst_movies = get_worst_movies(movies)
+
   print_movie_stats(average, best_movies, median, worst_movies)
 
 
@@ -115,6 +119,7 @@ def get_average(movies):
   """
   ratings = sort_list_by_rating(movies)
   average = sum(ratings) / len(ratings)
+
   return average
 
 
@@ -126,8 +131,10 @@ def sort_list_by_rating(movies):
   """
   sorted_list = sort_movies(movies)
   rating_list = []
+
   for dict in sorted_list:
     rating_list.append(dict[KFR])
+
   return rating_list
 
 
@@ -141,11 +148,14 @@ def get_median(movies):
             the median of the movie ratings(values)
    """
   sorted_list = sort_list_by_rating(movies)
+
   # finds the middle vlaue of the list (for the median)
   mid_index = len(sorted_list) // 2 - 1
+
   # when list is even
   if len(sorted_list) % 2 == 0:
     median = (sorted_list[mid_index] + sorted_list[mid_index + 1]) / 2
+
   # when list is uneven
   else:
     median = sorted_list[mid_index]
@@ -153,6 +163,11 @@ def get_median(movies):
 
 
 def get_best_movies(movies):
+  """gets the best movie(s) - by rating - in the list (movies)
+
+  :param movies: a list of dictionaries with movie informations
+  :return: movie(s) with the highest rating
+  """
   sorted_movie_list = sort_movies(movies)
   sml = sorted_movie_list
   best_rating = sml[0][KFR]
@@ -164,47 +179,68 @@ def get_best_movies(movies):
 
 
 def get_worst_movies(movies):
-  sorted_movie_list = sort_movies(movies)
+  """gets the worst movie(s) - by rating - in the list (movies)
+
+  :param movies: a list of dictionaries with movie informations
+  :return: movie(s) with the highest rating
+  """
+  sorted_movie_list = sort_movies(movies, KFR)
   sml = sorted_movie_list
   worst_rating = sml[-1][KFR]
   worst_movies = []
+
   for i in range(len(sml)):
     if sml[i][KFR] == worst_rating:
       worst_movies.append(sml[i])
+
   return worst_movies
 
 
-def print_movies_by_rating(movies):
-  sorted_movies = sort_movies(movies)
+def print_movies_sorted_by_rating(movies):
+  """prints movies, sorted by rating (high to low)
+
+  :param movies: a list of dictionaries with movie informations
+  """
+  sorted_movies = sort_movies(movies, KFR)
+
   for dict in sorted_movies:
-    print_random_movie(dict)
+    print_single_movie(dict)
 
 
-def print_movies_by_year(movies):
+def print_movies_sorted_by_year(movies):
+  """prints movies, sorted by release year (high to low)
+
+  :param movies: a list of dictionaries with movie informations
+  """
   sorted_movies = sort_movies(movies, KFY)
+
   for dict in sorted_movies:
-    print_random_movie(dict)
-
-
-
-
+    print_single_movie(dict)
 
 
 def filter_movies(movies):
+  """filters a deep copy of list(movies) by the filter values given by user
+
+  :param movies: a list of dictionaries with movie informations
+  :return: a filtred list of movies
+  """
   minimum_rating, start_year, end_year = get_filter_input()
   movies_copy = copy.deepcopy(movies)
 
-
-  if len(minimut_rating) > 0: filter_rating(movies_copy, minimum_rating)
+  if len(minimum_rating) > 0: filter_rating(movies_copy, minimum_rating)
 
   if len(start_year) == 0: filter_by_end_year(movies_copy, end_year)
   elif len(end_year) == 0: filter_by_start_year(movies_copy, start_year)
-
   else: filter_by_start_and_end_year(movies_copy, start_year, end_year)
+
   return movies_copy
 
 
 def get_filter_input():
+  """
+  gets the filter values from user. Changes types form input to float or integer
+  :return: input in correct type
+  """
   while True:
     try:
       minimum_rating = input("Enter minimum rating (leave blank for no minimum rating): ")
@@ -250,10 +286,12 @@ def filter_by_end_year(movies_copy, end_year):
     movies_copy(list): a modified version of the list "moves_copy"
   """
   for i in range(len(movies_copy)):
+
     if movies_copy[i][KFY] < end_year:
       continue
     else:
       del movies_copy[i]
+
   return movies_copy
 
 
@@ -268,10 +306,12 @@ def filter_by_start_year(movies_copy, start_year):
       movies_copy(list): a modified version of the list "moves_copy"
     """
   for i in range(len(movies_copy)):
+
     if start_year < movies_copy[i][KFY]:
       continue
     else:
       del movies_copy[i]
+
   return movies_copy
 
 
@@ -287,10 +327,12 @@ def filter_by_start_and_end_year(movies_copy, start_year, end_year):
       movies_copy(list): a modified version of the list "moves_copy"
     """
   for i in range(len(movies_copy)):
+
     if start_year < movies_copy[i][KFY] < end_year:
       continue
     else:
       del movies_copy[i]
+
   return movies_copy
 
 if __name__ == "__main__":
