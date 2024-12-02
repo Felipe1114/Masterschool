@@ -13,23 +13,20 @@ Menu:
 
 Enter choice (0-10):
 
-1. add an exit point to menu -> when aktivadet, programm closes an prints "bye"
-2. add release year to movie informations -> wich data type should I use?
-3. wich data structure should I use, to save data out of pycharm
-4. movie_storage in programm einbauen
+1. X add an exit point to menu -> when aktivadet, programm closes an prints "bye"
+2. X add release year to movie informations -> wich data type should I use?
+3. X wich data structure should I use, to save data out of pycharm
+4. X movie_storage in programm einbauen
+5. structure the movie programm new
 
-dict beispiel:
-dict = {
-    casino royale : {
-        year : 2010,
-        rating : 9
-        }
-    konfu Panda II : {
-        year : 2008,
-        rating : 8
-        }
+data structure:
+[
+    {"name":"casino royale", "year":2010, "ratin:8.9"},
+    {"name":"casino royale", "year":2010, "ratin:8.9"},
     ...
-    }
+    ]
+
+
 
     movie_infos[year] = 1990
     movie_infos[rating] = 7

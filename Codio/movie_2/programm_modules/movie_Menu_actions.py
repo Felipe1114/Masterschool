@@ -1,5 +1,8 @@
 import random
+from turtledemo.penrose import start
+
 import movie_storage as ms
+import copy
 
 KEY_FOR_YEAR = "year"
 KFY = KEY_FOR_YEAR
@@ -169,27 +172,105 @@ def print_movies_by_year(movies):
     print_random_movie(dict)
 
 
-def filter_moives(movies):
-  minimum_rating, start_year, end_year = get_filter_input()
-  filtred_list = []
-  filter_rating(movies, minimum_rating, filtred_list)
-
-
+# hier müssen end_year und start_year noch in eine int umgewandelt werden
 def get_filter_input():
-  minimum_rating = input("Enter minimum rating (leave blank for no minimum rating): ")
-  start_year = input("Enter start year (leave blank for no start year): ")
-  end_year = input("Enter end year (leave blank for no end year): ")
-  return minimum_rating, start_year, end_year
+  while True:
+    try:
+      minimum_rating = input("Enter minimum rating (leave blank for no minimum rating): ")
+      start_year = input("Enter start year (leave blank for no start year): ")
+      end_year = input("Enter end year (leave blank for no end year): ")
+      if len(minimum_rating) > 0:
+        minimum_rating = float(minimum_rating)
+      if len(start_year) > 0:
+        start_year = int(start_year)
+      if len(end_year) > 0:
+        end_year = int(end_year)
+      return minimum_rating, start_year, end_year
+    except ValueError as e:
+      print(f"Input must be empty or an number: {e}")
 
-# nicht neue lite machen, sondern movies kopieren und dann elemente aus der lsite löschen
-def filter_rating(movies, minimum_rating, filtred_list):
-  for dict in movies:
-    if dict[KFR] >= minimum_rating:
-      filtred_list.append(dict)
 
 
-def filter_year:
-  #
+def filter_movies(movies):
+  minimum_rating, start_year, end_year = get_filter_input()
+  movies_copy = copy.deepcopy(movies)
+
+
+  if len(minimut_rating) > 0: filter_rating(movies_copy, minimum_rating)
+
+  if len(start_year) == 0: filter_by_end_year(movies_copy, end_year)
+  elif len(end_year) == 0: filter_by_start_year(movies_copy, start_year)
+
+  else: filter_by_start_and_end_year(movies_copy, start_year, end_year)
+
+
+def filter_rating(movies_copy, minimum_rating):
+  """makes a copy of movies and deletes all elements in the list,
+  wich ratings are under minimum_rating
+
+  Args:
+    movies(list): a list of dictionaries with movie informations
+    minimum_rating(float): rating number, for filtering movies with lesser rating
+    """
+  for i in range(len(movies_copy)):
+    if movies_copy[i][KFR] < minimum_rating:
+      del movies_copy[i]
+  return movies_copy
+
+
+def filter_by_end_year(movies_copy, end_year):
+  """Filters all movies, with release years higher than end_year, out of movies_copy
+
+  Args:
+    movies_copy(list): copy of the list "movies".
+    end_year(int): an integer, representing an release year
+
+  Returns:
+    movies_copy(list): a modified version of the list "moves_copy"
+  """
+  for i in range(len(movies_copy)):
+    if movies_copy[i][KFY] < end_year:
+      continue
+    else:
+      del movies_copy[i]
+  return movies_copy
+
+
+def filter_by_start_year(movies_copy, start_year):
+  """Filters all movies, with release years lower than start_year, out of movies_copy
+
+    Args:
+      movies_copy(list): copy of the list "movies".
+      start_year(int): an integer, representing an release year
+
+    Returns:
+      movies_copy(list): a modified version of the list "moves_copy"
+    """
+  for i in range(len(movies_copy)):
+    if start_year < movies_copy[i][KFY]:
+      continue
+    else:
+      del movies_copy[i]
+  return movies_copy
+
+
+def filter_by_start_and_end_year(movies_copy, start_year, end_year):
+  """Filters all movies, with release years out ouf give range, out of movies_copy
+
+    Args:
+      movies_copy(list): copy of the list "movies".
+      end_year(int): an integer, representing an release year
+      start_year(int): an integer, representing an release year
+
+    Returns:
+      movies_copy(list): a modified version of the list "moves_copy"
+    """
+  for i in range(len(movies_copy)):
+    if start_year < movies_copy[i][KFY] < end_year:
+      continue
+    else:
+      del movies_copy[i]
+  return movies_copy
 
 if __name__ == "__main__":
   main()

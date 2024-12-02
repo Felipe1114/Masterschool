@@ -1,7 +1,8 @@
-def test_tuple_return():
-  return 2, 4, 5, 6
+inpt = float(input("give me a number"))
+print(inpt)
 
-a = test_tuple_return()
-index = a[3]
 
-print(index)
+if inpt == "":
+  pass
+else:
+  inpt = float(inpt)
