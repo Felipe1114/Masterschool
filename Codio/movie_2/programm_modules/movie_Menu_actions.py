@@ -12,8 +12,7 @@ KFN = KEY_FOR_NAME
 
 def main():
   movies = ms.get_movies()
-  print(sort_movies(movies, KFY))
-
+  # test funktions here
 
 
 def search_movie(movies:list):
@@ -46,7 +45,7 @@ def print_single_movie(movie:dict):
   print(f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}")
 
 
-def print_movies(list):
+def list_movies(list):
   """prints a list of movies
 
     Args:
@@ -106,9 +105,9 @@ def print_movie_stats(average, best_movies, median, worst_movies):
   print(f"Average of rating: {average:.2f}")
   print(f"The median of rating is: {median}")
   print("--------\nthe best movie/s is/are:")
-  print_movies(best_movies)
+  list_movies(best_movies)
   print("the worst movie/s is/are:")
-  print_movies(worst_movies)
+  list_movies(worst_movies)
 
 
 def get_average(movies):
@@ -334,6 +333,34 @@ def filter_by_start_and_end_year(movies_copy, start_year, end_year):
       del movies_copy[i]
 
   return movies_copy
+
+
+def get_name_input():
+  """takes from user a movie name
+
+  :return:
+  """
+  movie_name = input("Type in a movie name: ")
+  return movie_name
+
+
+def is_name_in_movies(movie_name, movies):
+  """Validades given movie name, if it is in list(movies)
+
+  :param movie_name: movie name, to check if it is in movies
+  :param movies: a list of dictionaries, with movie informations
+  :return: None
+  """
+  name_is_valid = False
+  for movie in movies:
+    if movie_name == movie[KFN]:
+      name_is_valid = True
+
+  if name_is_valid:
+    return
+  else:
+    raise ValueError("Error: Movie name is not in movie list!")
+
 
 if __name__ == "__main__":
   main()

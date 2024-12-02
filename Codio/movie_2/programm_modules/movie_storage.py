@@ -1,5 +1,8 @@
 import json as js
+import movie_Menu_actions as mma
+
 DATAPATH = "../programm_files/movie_storage.json"
+
 # der punkt vor /programm mus noch weg, damit es ind er main funktion funktioniert
 KEY_FOR_YEAR = "year"
 KFY = KEY_FOR_YEAR
@@ -7,6 +10,7 @@ KEY_FOR_RATING = "rating"
 KFR = KEY_FOR_RATING
 KEY_FOR_NAME = "name"
 KFN = KEY_FOR_NAME
+
 
 def get_movies() -> list:
   """
@@ -29,7 +33,7 @@ def save_movies(movies):
     js.dump(movies, json_data, indent=4)
 
 
-def add_movie(title:str, year:int, rating:float):
+def add_movie():
   """
   Adds a movie to the movies database.
   Loads the information from the JSON file, add the movie,
@@ -37,21 +41,38 @@ def add_movie(title:str, year:int, rating:float):
   """
   movies = get_movies()
   new_movie = {}
-  new_movie[KFN] = title
-  new_movie[KFY] = year
-  new_movie[KFR] = rating
+
+  while True:
+    try:
+      new_movie[KFN] = input("Type in a movie name: ")
+      new_movie[KFY] = int(input("Wich was the release year?(int): "))
+      new_movie[KFR] = float(input("Type in your rating.(float): "))
+      break
+    except ValueError as e:
+      print(f"Input must be a number: {e}")
+
   movies.append(new_movie)
+
   save_movies(movies)
 
 
-def delete_movie(title:str):
+def delete_movie():
   """
   Deletes a movie from the movies database.
   Loads the information from the JSON file, deletes the movie,
   and saves it. The function doesn't need to validate the input.
   """
   movies = get_movies()
-  searched_dict, index = find_dict_by_name(movies, title)
+
+  while True:
+    try:
+      movie_title = mma.get_name_input()
+      mma.is_name_in_movies(movie_title, movies)
+      break
+    except ValueError as e:
+      print(e)
+
+  searched_dict, index = find_dict_by_name(movies, movie_title)
   del movies[index]
   save_movies(movies)
 
