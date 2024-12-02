@@ -1,6 +1,4 @@
 import random
-from turtledemo.penrose import start
-
 import movie_storage as ms
 import copy
 
@@ -14,7 +12,7 @@ KFN = KEY_FOR_NAME
 
 def main():
   movies = ms.get_movies()
-  print(sort_movies_by_year(movies))
+  print(sort_movies(movies, KFY))
 
 
 
@@ -55,20 +53,15 @@ def print_movies(list):
   for movie in list:
     print(f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}")
 
-# die sort fruntioen kann man noch zusammenfügen, in dem man
-# den key als parameter als argument einfügt
-def sort_movies_by_rating(movies):
-  sorted_movies = sorted(movies, key=lambda dict:dict[KFR], reverse=True)
-  return sorted_movies
 
+def sort_movies(movies, key):
+  """Sorts the List(movies) by rating, year or name
 
-def sort_movies_by_year(movies):
-  sorted_movies = sorted(movies, key=lambda dict:dict[KFY], reverse=True)
-  return sorted_movies
-
-
-def sort_movies_by_name(movies):
-  sorted_movies = sorted(movies, key=lambda dict: dict[KFN], reverse=True)
+  :param movies: a list of dictionaries with movie informations
+  :param key: the key for rating, year or name
+  :return: the sorted list of dictionaries
+  """
+  sorted_movies = sorted(movies, key=lambda dict:dict[key], reverse=True)
   return sorted_movies
 
 
@@ -85,6 +78,10 @@ def print_random_movie(movies):
 
 
 def get_movie_stats(movies):
+  """Calculates and diyplays average rating, median rating, best and worst movie rating
+
+  :param movies: a list of dictionaries with movie informations
+  """
   average = get_average(movies)
   median = get_median(movies)
   best_movies = get_best_movies(movies)
@@ -93,24 +90,41 @@ def get_movie_stats(movies):
 
 
 def print_movie_stats(average, best_movies, median, worst_movies):
-  print()
-  print("The statistics are:")
+  """Displays all movie stats
+
+  :param average: average movie ratings
+  :param best_movies: movie(s) with the best rating
+  :param median: median movie ratings
+  :param worst_movies: movie(s) with the worst rating
+  :return:
+  """
+  print("\nThe statistics are:")
   print(f"Average of rating: {average:.2f}")
   print(f"The median of rating is: {median}")
-  print("the best movie/s is/are:")
+  print("--------\nthe best movie/s is/are:")
   print_movies(best_movies)
   print("the worst movie/s is/are:")
   print_movies(worst_movies)
 
 
 def get_average(movies):
-  ratings = get_sorted_rating_list(movies)
+  """calcultes the average of all movie ratings
+
+  :param movies: a list of dictionaries with movie informations
+  :return: the average of all movie ratings
+  """
+  ratings = sort_list_by_rating(movies)
   average = sum(ratings) / len(ratings)
   return average
 
 
-def get_sorted_rating_list(movies):
-  sorted_list = sort_movies_by_rating(movies)
+def sort_list_by_rating(movies):
+  """sorts the list(movies) by its ratings in the dicionaries
+
+  :param movies: a list of dictionaries with movie informations
+  :return: a list of dictionaries, sorted by its values of the keys[ratings]
+  """
+  sorted_list = sort_movies(movies)
   rating_list = []
   for dict in sorted_list:
     rating_list.append(dict[KFR])
@@ -126,20 +140,20 @@ def get_median(movies):
         Returns:
             the median of the movie ratings(values)
    """
-  sorted_list = get_sorted_rating_list(movies)
+  sorted_list = sort_list_by_rating(movies)
   # finds the middle vlaue of the list (for the median)
   mid_index = len(sorted_list) // 2 - 1
   # when list is even
   if len(sorted_list) % 2 == 0:
     median = (sorted_list[mid_index] + sorted_list[mid_index + 1]) / 2
-  # when lst is uneven
+  # when list is uneven
   else:
     median = sorted_list[mid_index]
   return median
 
 
 def get_best_movies(movies):
-  sorted_movie_list = sort_movies_by_rating(movies)
+  sorted_movie_list = sort_movies(movies)
   sml = sorted_movie_list
   best_rating = sml[0][KFR]
   best_movies = []
@@ -150,7 +164,7 @@ def get_best_movies(movies):
 
 
 def get_worst_movies(movies):
-  sorted_movie_list = sort_movies_by_rating(movies)
+  sorted_movie_list = sort_movies(movies)
   sml = sorted_movie_list
   worst_rating = sml[-1][KFR]
   worst_movies = []
@@ -161,13 +175,13 @@ def get_worst_movies(movies):
 
 
 def print_movies_by_rating(movies):
-  sorted_movies = sort_movies_by_rating(movies)
+  sorted_movies = sort_movies(movies)
   for dict in sorted_movies:
     print_random_movie(dict)
 
 
 def print_movies_by_year(movies):
-  sorted_movies = sort_movies_by_year(movies)
+  sorted_movies = sort_movies(movies, KFY)
   for dict in sorted_movies:
     print_random_movie(dict)
 
