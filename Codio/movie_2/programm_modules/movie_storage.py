@@ -1,7 +1,7 @@
 import json as js
-import movie_Menu_actions as mma
+from.import movie_Menu_actions as mma
 
-DATAPATH = "../programm_files/movie_storage.json"
+DATAPATH = "./programm_files/movie_storage.json"
 
 # der punkt vor /programm mus noch weg, damit es ind er main funktion funktioniert
 KEY_FOR_YEAR = "year"
@@ -14,7 +14,7 @@ KFN = KEY_FOR_NAME
 
 def get_movies() -> list:
   """
-  Returns a dictionary of dictionaries that
+  Returns a list of dictionaries that
   contains the movies information in the database.
 
   The function loads the information from the JSON
@@ -41,20 +41,16 @@ def add_movie():
   """
   movies = get_movies()
   new_movie = {}
-
-  #kann man in "movie_Menu_actions" verlagern
-  while True:
-    try:
-      new_movie[KFN] = input("Type in a movie name: ")
-      new_movie[KFY] = int(input("Wich was the release year?(int): "))
-      new_movie[KFR] = float(input("Type in your rating.(float): "))
-      break
-    except ValueError as e:
-      print(f"Input must be a number: {e}")
+  
+  mma.get_movie_informations(new_movie)
 
   movies.append(new_movie)
 
   save_movies(movies)
+  
+  return (f"A new Movie({movies[-1][KFN]}({movies[-1][KFY]})"
+          f"with rating {movies[-1][KFR]} was added to movie list")
+
 
 
 def delete_movie():
@@ -62,14 +58,29 @@ def delete_movie():
   Deletes a movie from the movies database.
   Loads the information from the JSON file, deletes the movie,
   and saves it. The function doesn't need to validate the input.
+
+  movie_dict: the dictionary the user want to delete
+  index: the index of the dictionary in movie list
   """
   movies = get_movies()
 
-  movie_title = mma.get_movie_name(movies)
+  while True:
+    try:
+      searched_movie_title = mma.get_movie_name(movies)
 
-  searched_dict, index = find_dict_by_name(movies, movie_title)
-  del movies[index]
-  save_movies(movies)
+      movie_dict, index = find_dict_by_name(movies, searched_movie_title)
+      delete_notification = (f"Movie({movie_dict[KFN]}({movie_dict[KFY]})"
+                             f"with rating {movie_dict[KFR]} was deleted")
+
+      del movies[index]
+      save_movies(movies)
+
+      return delete_notification
+    except ValueError as e:
+      print(e)
+  
+
+
 
 
 
@@ -87,6 +98,9 @@ def update_movie():
   searched_dict, index = find_dict_by_name(movies, movie_name)
   movies[index][KFR] = movie_rating
   save_movies(movies)
+  
+  return (f"The rating of the movie({movies[index][KFN]}({movies[index][KFY]})"
+          f"is now: {movies[index][KFR]}")
 
 
 def find_dict_by_name(movies:list, searched_name:str) -> tuple:
@@ -104,7 +118,7 @@ def find_dict_by_name(movies:list, searched_name:str) -> tuple:
     i: the index of the searched dict in the movie-list
   """
   for i in range(len(movies)):
-    if movies[i][KFN].lower == searched_name.lower:
+    if movies[i][KFN].lower() == searched_name.lower():
       return movies[i], i
   raise ValueError("Given name not in movie-list. Please give an existing name")
 

@@ -1,49 +1,79 @@
-from termios import VLNEXT
-
-from programm_modules import movie_storage as ms
 from programm_modules import movie_Menu_actions as mma
+from programm_modules import movie_storage as ms
 
-
-
+OPERATIONS = {
+    0: exit, #("bye")
+    1: mma.list_up_movies, #(movies),
+    2: ms.add_movie,
+    3: ms.delete_movie,
+    4: ms.update_movie,
+    5: mma.get_movie_stats, #(movies)
+    6: mma.print_random_movie, #(movies)
+    7: mma.search_movie, #(movies),
+    8: mma.print_movies_sorted_by_rating #(movies)
+  }
 
 def main():
-  """Executes the user_input(str); contains movies(dictionary)
-
-  Args:
-  none
-
-  Returns:
-  none
+  """
   """
   print("********** Welcome to my Movies Database **********")
 
   movies = ms.get_movies()
 
   while True:
-    operations ={
-      0 : exit(),
-      1 : mma.list_movies(movies),
-      2 : ms.add_movie(),
-      3 : ms.delete_movie(),
-      4 : ms. update_movie(),
-      5 : mma.get_movie_stats(movies),
-      6 : mma.print_random_movie(movies),
-      7 : mma.search_movie(movies),
-      8 : mma.print_movies_sorted_by_rating(movies)
-    }
 
     print_menu()
+    funktion_key = get_user_input()
+    # hier muss noch validiert werden, ob die funktion einen paramehter braucht
+
+
+    execute_programm_funktions(funktion_key, movies)
+
+    continue_with_programm()
+
+
+def execute_programm_funktions(funktion_key, movies):
+  """Takes the funktion_key and validades wich case of funktion the key is rasing.
+
+        Args:
+            funktion_key (int): the command for a specific aktion of the programm
+            movies(list): a list of dictionaries, with movie informations
+    """
+
+  # the exit() funktion, wich is taking "bye" as argument
+  a_funktions = [0]
+  # all funktions, which are taking 'movies' as an argument
+  b_funktions = [1, 5, 6, 7, 8]
+  # all funktions, wich don´t take an argument
+  c_funktions = [2, 3, 4]
+
+  if funktion_key in a_funktions:
+    print(OPERATIONS[funktion_key]("bye"))
+  elif funktion_key in b_funktions:
+    print(OPERATIONS[funktion_key](movies))
+  elif funktion_key in c_funktions:
+    print(OPERATIONS[funktion_key]())
+
+
+def continue_with_programm():
+  """get an empty string from user (by pressing Enter). If input is not empty, an Error is risen"""
+  while True:
+    try:
+      continue_programm = input("press Enter to contiune")
+      validade_programm_continuation(continue_programm)
+      break
+    except ValueError as e:
+      print(e)
+
+
+def validade_programm_continuation(user_input):
+  """validades if user_input is an empty string (len = 0). If not, an Error is risen"""
+  if len(user_input) > 0:
+    raise ValueError("Please press only Enter")
 
 
 def print_menu():
-  """Displays the Menu to the user with the input commands
-
-      Args:
-          user_input (str): the empty string ftrom "Back_to_menu"
-
-      Returns:
-          the user inpt with the command for a programm aktion(str)
-  """
+  """Displays the Menu to the user with the input commands"""
   print("\n===Menu:===\n"
         "\t0. Exit\n"
         "\t1. List movies\n"
@@ -55,8 +85,6 @@ def print_menu():
         "\t7. Search movie\n"
         "\t8. Movies sorted by rating")
 
-  return get_user_input()
-
 
 def get_user_input():
   """gets a number between 0 and 8 from user
@@ -65,8 +93,11 @@ def get_user_input():
   :return: user_input(a number between 1 - 8. Will be used, to choose a programm action)
   """
   while True:
+
     try:
-      return validade_user_input()
+      user_input = validade_user_input()
+      return user_input
+
     except ValueError as e:
       print(e)
 
@@ -83,42 +114,6 @@ def validade_user_input():
     raise ValueError("Error! Input must be between 0 and 8.")
 
   return user_input
-
-
-
-
-# hier neuen code aufsetzten
-def execute_user_input(user_input):
-  """Takes the user_input and executes one of nine aktions
-
-      Args:
-          user_input (int): the command for a specific aktion of the programm
-          movies (dict): the dictionary with the movies and their rankings
-
-      Returns:
-          none
-  """
-  if user_input == 0:
-    # exit
-  elif user_input == 1:
-    # list all movies
-  elif user_input == 2:
-    # add movie
-  elif user_input == 3:
-    # delete_movie(movies)
-  elif user_input == 4:
-    # update_rating(movies)
-  elif user_input == 5:
-    # print_statistiks(movies)
-  elif user_input == 6:
-    # random_movie(movies)
-  elif user_input == 7:
-    # search_movie(movies)
-  elif user_input == 8:
-    # movies_sorted(movies)
-
-
-
 
 
 

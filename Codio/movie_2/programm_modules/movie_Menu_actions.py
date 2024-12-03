@@ -1,5 +1,5 @@
 import random
-import movie_storage as ms
+from.import movie_storage as ms
 import copy
 
 KEY_FOR_YEAR = "year"
@@ -8,11 +8,6 @@ KEY_FOR_RATING = "rating"
 KFR = KEY_FOR_RATING
 KEY_FOR_NAME = "name"
 KFN = KEY_FOR_NAME
-
-
-def main():
-  movies = ms.get_movies()
-  # test funktions here
 
 
 def search_movie(movies:list):
@@ -42,17 +37,22 @@ def print_single_movie(movie:dict):
       Args:
       movie(dict): a dictionary with all informations about one movie
       """
-  print(f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}")
+  return f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}"
 
 
-def list_movies(list):
+def list_up_movies(list):
   """prints a list of movies
 
     Args:
       list(list): a given list of dictionaries with movie informations
   """
+
+  text = ""
   for movie in list:
-    print(f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}")
+    text = text + f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}" + "\n" # print engine einbauen
+
+  return text
+
 
 
 def sort_movies(movies, key):
@@ -75,8 +75,8 @@ def print_random_movie(movies):
   random_index = random.randrange(len(movies))
   random_movie = movies[random_index]
 
-  print("Here is a ranodm movie out of the Database:")
-  print(f"{random_movie[KFN]}({random_movie[KFY]}): {random_movie[KFR]}")
+  return (f"Here is a ranodm movie out of the Database:\n"
+          f"{random_movie[KFN]}({random_movie[KFY]}): {random_movie[KFR]}")
 
 
 def get_movie_stats(movies):
@@ -99,15 +99,18 @@ def print_movie_stats(average, best_movies, median, worst_movies):
   :param best_movies: movie(s) with the best rating
   :param median: median movie ratings
   :param worst_movies: movie(s) with the worst rating
-  :return:
+  :return: a long string with all statistics
   """
-  print("\nThe statistics are:")
-  print(f"Average of rating: {average:.2f}")
-  print(f"The median of rating is: {median}")
-  print("--------\nthe best movie/s is/are:")
-  list_movies(best_movies)
-  print("the worst movie/s is/are:")
-  list_movies(worst_movies)
+  best_movie = list_up_movies(best_movies)
+  worst_movie = list_up_movies(worst_movies)
+  return (f"\nThe statistics are:" # warum wird hier nichts zurück gegeben?
+          f"Average of rating: {average:.2f}\n"
+          f"The median of rating is: {median}\n"
+          f"--------\nthe best movie/s is/are:\n"
+          f"{best_movie}"
+          f"he worst movie/s is/are:"
+          f"{worst_movie}")
+
 
 
 def get_average(movies):
@@ -128,7 +131,7 @@ def sort_list_by_rating(movies):
   :param movies: a list of dictionaries with movie informations
   :return: a list of dictionaries, sorted by its values of the keys[ratings]
   """
-  sorted_list = sort_movies(movies)
+  sorted_list = sort_movies(movies, KFR)
   rating_list = []
 
   for dict in sorted_list:
@@ -167,7 +170,7 @@ def get_best_movies(movies):
   :param movies: a list of dictionaries with movie informations
   :return: movie(s) with the highest rating
   """
-  sorted_movie_list = sort_movies(movies)
+  sorted_movie_list = sort_movies(movies, KFR)
   sml = sorted_movie_list
   best_rating = sml[0][KFR]
   best_movies = []
@@ -202,19 +205,8 @@ def print_movies_sorted_by_rating(movies):
   """
   sorted_movies = sort_movies(movies, KFR)
 
-  for dict in sorted_movies:
-    print_single_movie(dict)
+  return list_up_movies(sorted_movies)
 
-
-def print_movies_sorted_by_year(movies):
-  """prints movies, sorted by release year (high to low)
-
-  :param movies: a list of dictionaries with movie informations
-  """
-  sorted_movies = sort_movies(movies, KFY)
-
-  for dict in sorted_movies:
-    print_single_movie(dict)
 
 
 def filter_movies(movies):
@@ -264,7 +256,7 @@ def filter_rating(movies_copy, minimum_rating):
   wich ratings are under minimum_rating
 
   Args:
-    movies(list): a list of dictionaries with movie informations
+    movies_copy(list): a list of dictionaries with movie informations
     minimum_rating(float): rating number, for filtering movies with lesser rating
     """
   for i in range(len(movies_copy)):
@@ -335,6 +327,17 @@ def filter_by_start_and_end_year(movies_copy, start_year, end_year):
   return movies_copy
 
 
+def get_movie_informations(new_movie):
+  while True:
+    try:
+      new_movie[KFN] = input("Type in a movie name: ")
+      new_movie[KFY] = int(input("Wich was the release year?(int): "))
+      new_movie[KFR] = float(input("Type in your rating.(float): "))
+      break
+    except ValueError as e:
+      print(f"Input must be a number: {e}")
+
+
 def get_user_input_for_name():
   """takes from user a movie name
 
@@ -361,6 +364,7 @@ def is_name_in_movies(movie_name, movies):
   else:
     raise ValueError("Error: Movie name is not in movie list!")
 
+
 def get_movie_name(movies):
   """gets movie name by user input and valides it
 
@@ -376,6 +380,7 @@ def get_movie_name(movies):
       print(e)
   return movie_title
 
+
 def get_movie_rating():
   while True:
     try:
@@ -383,6 +388,3 @@ def get_movie_rating():
       return movie_rating
     except ValueError as e:
       print(f"Input must be a float: {e}")
-
-if __name__ == "__main__":
-  main()
