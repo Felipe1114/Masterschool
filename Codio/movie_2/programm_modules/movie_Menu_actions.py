@@ -25,13 +25,13 @@ def search_movie(movies:list):
     try:
       searched_name = input("Wich movie are you searching for?: ")
       searched_movie, index = ms.find_dict_by_name(movies, searched_name)
-      print_single_movie(searched_movie)
+      return display_single_movie(searched_movie)
 
     except ValueError as e:
       print("Error:", e)
 
 
-def print_single_movie(movie:dict):
+def display_single_movie(movie:dict):
   """Prints a movie, with its release year and ranking
 
       Args:
@@ -52,7 +52,6 @@ def list_up_movies(list):
     text = text + f"{movie[KFN]}({movie[KFY]}): {movie[KFR]}" + "\n" # print engine einbauen
 
   return text
-
 
 
 def sort_movies(movies, key):
@@ -89,28 +88,18 @@ def get_movie_stats(movies):
   best_movies = get_best_movies(movies)
   worst_movies = get_worst_movies(movies)
 
-  print_movie_stats(average, best_movies, median, worst_movies)
+  text_for_best_movies = list_up_movies(best_movies)
+  text_for_worst_movies = list_up_movies(worst_movies)
 
-
-def print_movie_stats(average, best_movies, median, worst_movies):
-  """Displays all movie stats
-
-  :param average: average movie ratings
-  :param best_movies: movie(s) with the best rating
-  :param median: median movie ratings
-  :param worst_movies: movie(s) with the worst rating
-  :return: a long string with all statistics
-  """
-  best_movie = list_up_movies(best_movies)
-  worst_movie = list_up_movies(worst_movies)
-  return (f"\nThe statistics are:" # warum wird hier nichts zurück gegeben?
+  text = (f"\nThe statistics are:"
           f"Average of rating: {average:.2f}\n"
           f"The median of rating is: {median}\n"
           f"--------\nthe best movie/s is/are:\n"
-          f"{best_movie}"
-          f"he worst movie/s is/are:"
-          f"{worst_movie}")
+          f"{text_for_best_movies}\n"
+          f"he worst movie/s is/are:\n"
+          f"{text_for_worst_movies}")
 
+  return text
 
 
 def get_average(movies):
@@ -208,7 +197,7 @@ def print_movies_sorted_by_rating(movies):
   return list_up_movies(sorted_movies)
 
 
-
+# ist noch nicht in main(codio_movies_2) eingebaut
 def filter_movies(movies):
   """filters a deep copy of list(movies) by the filter values given by user
 
@@ -328,12 +317,19 @@ def filter_by_start_and_end_year(movies_copy, start_year, end_year):
 
 
 def get_movie_informations(new_movie):
+  """gets all movie informations (name, release year, ratin) for a new movie
+
+  :param new_movie: a dictionary which is filled with movie informations
+  """
   while True:
+
     try:
       new_movie[KFN] = input("Type in a movie name: ")
       new_movie[KFY] = int(input("Wich was the release year?(int): "))
       new_movie[KFR] = float(input("Type in your rating.(float): "))
+
       break
+
     except ValueError as e:
       print(f"Input must be a number: {e}")
 
@@ -355,12 +351,14 @@ def is_name_in_movies(movie_name, movies):
   :return: None
   """
   name_is_valid = False
+
   for movie in movies:
     if movie_name == movie[KFN]:
       name_is_valid = True
 
   if name_is_valid:
     return
+
   else:
     raise ValueError("Error: Movie name is not in movie list!")
 
@@ -372,19 +370,24 @@ def get_movie_name(movies):
   :return: the validated movie title
   """
   while True:
+
     try:
+
       movie_title = get_user_input_for_name()
       is_name_in_movies(movie_title, movies)
-      break
+      return movie_title
+
     except ValueError as e:
       print(e)
-  return movie_title
+
 
 
 def get_movie_rating():
   while True:
+
     try:
       movie_rating = float(input("Type in your rating(float): "))
       return movie_rating
+
     except ValueError as e:
       print(f"Input must be a float: {e}")

@@ -3,7 +3,6 @@ from.import movie_Menu_actions as mma
 
 DATAPATH = "./programm_files/movie_storage.json"
 
-# der punkt vor /programm mus noch weg, damit es ind er main funktion funktioniert
 KEY_FOR_YEAR = "year"
 KFY = KEY_FOR_YEAR
 KEY_FOR_RATING = "rating"
@@ -52,7 +51,6 @@ def add_movie():
           f"with rating {movies[-1][KFR]} was added to movie list")
 
 
-
 def delete_movie():
   """
   Deletes a movie from the movies database.
@@ -65,6 +63,7 @@ def delete_movie():
   movies = get_movies()
 
   while True:
+
     try:
       searched_movie_title = mma.get_movie_name(movies)
 
@@ -78,10 +77,6 @@ def delete_movie():
       return delete_notification
     except ValueError as e:
       print(e)
-  
-
-
-
 
 
 def update_movie():

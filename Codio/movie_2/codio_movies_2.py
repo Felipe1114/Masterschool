@@ -14,7 +14,8 @@ OPERATIONS = {
   }
 
 def main():
-  """
+  """gets movies form database and asks user for key(input).
+  Than executes function out of dictionary(function is value of given key)
   """
   print("********** Welcome to my Movies Database **********")
 
@@ -23,10 +24,8 @@ def main():
   while True:
 
     print_menu()
+
     funktion_key = get_user_input()
-    # hier muss noch validiert werden, ob die funktion einen paramehter braucht
-
-
     execute_programm_funktions(funktion_key, movies)
 
     continue_with_programm()
@@ -110,11 +109,10 @@ def validade_user_input():
   """
   user_input = int(input("What do you want to do?(0-8): "))
 
-  if 8 < user_input < 0:
+  if 8 < user_input or user_input < 0:
     raise ValueError("Error! Input must be between 0 and 8.")
 
   return user_input
-
 
 
 if __name__ == "__main__":
