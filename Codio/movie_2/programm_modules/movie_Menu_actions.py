@@ -197,7 +197,16 @@ def print_movies_sorted_by_rating(movies):
   return list_up_movies(sorted_movies)
 
 
-# ist noch nicht in main(codio_movies_2) eingebaut
+def print_movies_sorted_by_year(movies):
+  """prints movies, sorted by year (high to low)
+
+  :param movies: a list of dictionaries with movie informations
+  """
+  sorted_movies = sort_movies(movies, KFY)
+
+  return list_up_movies(sorted_movies)
+
+
 def filter_movies(movies):
   """filters a deep copy of list(movies) by the filter values given by user
 
@@ -205,15 +214,24 @@ def filter_movies(movies):
   :return: a filtred list of movies
   """
   minimum_rating, start_year, end_year = get_filter_input()
-  movies_copy = copy.deepcopy(movies)
+  filtred_movies = copy.deepcopy(movies)
 
-  if len(minimum_rating) > 0: filter_rating(movies_copy, minimum_rating)
+  if type(minimum_rating) is float:
+    filter_rating(movies, filtred_movies, minimum_rating)
 
-  if len(start_year) == 0: filter_by_end_year(movies_copy, end_year)
-  elif len(end_year) == 0: filter_by_start_year(movies_copy, start_year)
-  else: filter_by_start_and_end_year(movies_copy, start_year, end_year)
+  # if start_year and end_year got input
+  if type(start_year) is int and type(end_year) is int:
+      filter_by_start_and_end_year(movies, filtred_movies, start_year, end_year)
 
-  return movies_copy
+  # if only start_year got input
+  elif type(start_year) is int and type(end_year) is not int:
+    filter_by_start_year(movies, filtred_movies, start_year)
+
+  # if only end_year got input
+  elif type(start_year) is not int and type(end_year) is int:
+    filter_by_end_year(movies, filtred_movies, end_year)
+
+  return list_up_movies(filtred_movies)
 
 
 def get_filter_input():
@@ -240,42 +258,40 @@ def get_filter_input():
       print(f"Input must be empty or an number: {e}")
 
 
-def filter_rating(movies_copy, minimum_rating):
+def filter_rating(movies, filtred_movies, minimum_rating):
   """makes a copy of movies and deletes all elements in the list,
   wich ratings are under minimum_rating
 
   Args:
-    movies_copy(list): a list of dictionaries with movie informations
+    filtred_movies(list): a list of dictionaries with movie informations
     minimum_rating(float): rating number, for filtering movies with lesser rating
     """
-  for i in range(len(movies_copy)):
-    if movies_copy[i][KFR] < minimum_rating:
-      del movies_copy[i]
 
-  return movies_copy
+  for i in range(len(movies)):
+    if movies[i][KFR] < minimum_rating:
+      filtred_movies.remove(movies[i])
 
 
-def filter_by_end_year(movies_copy, end_year):
+
+def filter_by_end_year(movies, filtred_movies, end_year):
   """Filters all movies, with release years higher than end_year, out of movies_copy
 
   Args:
-    movies_copy(list): copy of the list "movies".
+    filtred_movies(list): copy of the list "movies".
     end_year(int): an integer, representing an release year
 
   Returns:
     movies_copy(list): a modified version of the list "moves_copy"
   """
-  for i in range(len(movies_copy)):
+  for i in range(len(movies)):
 
-    if movies_copy[i][KFY] < end_year:
+    if movies[i][KFY] < end_year:
       continue
     else:
-      del movies_copy[i]
-
-  return movies_copy
+      filtred_movies.remove(movies[i])
 
 
-def filter_by_start_year(movies_copy, start_year):
+def filter_by_start_year(movies, movies_copy, start_year):
   """Filters all movies, with release years lower than start_year, out of movies_copy
 
     Args:
@@ -285,17 +301,15 @@ def filter_by_start_year(movies_copy, start_year):
     Returns:
       movies_copy(list): a modified version of the list "moves_copy"
     """
-  for i in range(len(movies_copy)):
+  for i in range(len(movies)):
 
-    if start_year < movies_copy[i][KFY]:
+    if start_year < movies[i][KFY]:
       continue
     else:
-      del movies_copy[i]
-
-  return movies_copy
+      movies_copy.remove(movies[i])
 
 
-def filter_by_start_and_end_year(movies_copy, start_year, end_year):
+def filter_by_start_and_end_year(movies, movies_copy, start_year, end_year):
   """Filters all movies, with release years out ouf give range, out of movies_copy
 
     Args:
@@ -306,14 +320,12 @@ def filter_by_start_and_end_year(movies_copy, start_year, end_year):
     Returns:
       movies_copy(list): a modified version of the list "moves_copy"
     """
-  for i in range(len(movies_copy)):
+  for i in range(len(movies)):
 
-    if start_year < movies_copy[i][KFY] < end_year:
+    if start_year < movies[i][KFY] < end_year:
       continue
     else:
-      del movies_copy[i]
-
-  return movies_copy
+      movies_copy.remove(movies[i])
 
 
 def get_movie_informations(new_movie):
@@ -324,7 +336,10 @@ def get_movie_informations(new_movie):
   while True:
 
     try:
-      new_movie[KFN] = input("Type in a movie name: ")
+
+      new_movie[KFN] = get_user_input_for_name()
+
+
       new_movie[KFY] = int(input("Wich was the release year?(int): "))
       new_movie[KFR] = float(input("Type in your rating.(float): "))
 
@@ -340,6 +355,9 @@ def get_user_input_for_name():
   :return:
   """
   movie_name = input("Type in a movie name: ")
+  if len(movie_name) == 0:
+    raise ValueError("Movie name munst not be empty")
+
   return movie_name
 
 

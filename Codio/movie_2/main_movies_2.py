@@ -10,7 +10,9 @@ OPERATIONS = {
     5: mma.get_movie_stats, #(movies)
     6: mma.print_random_movie, #(movies)
     7: mma.search_movie, #(movies),
-    8: mma.print_movies_sorted_by_rating #(movies)
+    8: mma.print_movies_sorted_by_rating, #(movies)
+    9: mma.print_movies_sorted_by_year, #(movies)
+    10: mma.filter_movies #(movies)
   }
 
 def main():
@@ -42,7 +44,7 @@ def execute_programm_funktions(funktion_key, movies):
   # the exit() funktion, wich is taking "bye" as argument
   a_funktions = [0]
   # all funktions, which are taking 'movies' as an argument
-  b_funktions = [1, 5, 6, 7, 8]
+  b_funktions = [1, 5, 6, 7, 8, 9, 10]
   # all funktions, wich don´t take an argument
   c_funktions = [2, 3, 4]
 
@@ -82,7 +84,9 @@ def print_menu():
         "\t5. stats\n"
         "\t6. Random movie\n"
         "\t7. Search movie\n"
-        "\t8. Movies sorted by rating")
+        "\t8. Movies sorted by rating\n"
+        "\t9. Movies sorted by year\n"
+        "\t10. Filter movies")
 
 
 def get_user_input():
@@ -107,9 +111,9 @@ def validade_user_input():
 
   :return: user_input(0-8)
   """
-  user_input = int(input("What do you want to do?(0-8): "))
+  user_input = int(input("What do you want to do?(0-10): "))
 
-  if 8 < user_input or user_input < 0:
+  if 10 < user_input or user_input < 0:
     raise ValueError("Error! Input must be between 0 and 8.")
 
   return user_input
