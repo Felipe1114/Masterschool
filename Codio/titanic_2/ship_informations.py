@@ -188,7 +188,7 @@ def command_print_top_countries(ship_informations:dict, input_num):
 def menu(ship_informations):
   """Validades the input, split it up and calls invoked command"""
   while True:
-    user_input = input()
+    user_input = input("please type in your command: ")
     input_is_valid = val.validate(user_input)
     if input_is_valid:
       input_list = user_input.split(" ")

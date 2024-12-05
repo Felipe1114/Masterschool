@@ -11,7 +11,7 @@ COMMANDS_DICT = {
 
 
 def main():
-  validate(input())
+  validate(input("please_type in your commands: "))
 
 
 def create_command_list():
