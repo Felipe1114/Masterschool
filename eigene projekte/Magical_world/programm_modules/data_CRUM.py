@@ -1,6 +1,5 @@
-from Übungen.create_files_übungen import read_file
 
-DATAPATH = "./eigene projekte/Magical_world/programm_data/"
+DATAPATH = "./programm_data/"
 
 def get_data(file_name):
   with open(DATAPATH + file_name, "r") as objfile:
@@ -10,7 +9,8 @@ def get_data(file_name):
 
 def save_data(data,file_name):
   with open(DATAPATH + file_name, "w") as objfile:
-    objfile.write(data)
+    for line in data:
+      objfile.write(line)
 
 
 def print_data(data):
@@ -18,8 +18,11 @@ def print_data(data):
     print(line)
 
 
-def change_data(data, new_data):
+def add_data(new_data, file_name):
+  data = get_data(file_name)
   for line in new_data:
     data.append(line)
+  save_data(data, file_name)
+
 
   return data
