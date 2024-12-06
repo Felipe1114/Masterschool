@@ -102,42 +102,48 @@ def main():
     pass
 
 
-def get_prob_for_throw(N_from_dice:int=4, threshold_S:int=4, N_e_from_extra_dice:int=0, penalty_y:int=None) -> float:
+def get_prob_for_throw(N_from_base_dice:int=4, threshold_S:int=4, N_e_from_extra_dice:int=0, penalty_y:int=None) -> float:
     """calculates the probabilty of the chance of a success
 
     Args:
-        N = all sides of a dice
+        Nb = all sides of a dice
         S = threshold to hit or overthrow
         E_base_dice = final probabilty
         y = penalty for probe
 
     Variables:
-        n_1 = sides of dice higher then S
+        n1 = sides of dice higher then S
+        P1 = probability for fail (1-E_base_dice)
+
+        E_extra_dice = final probability of second dice
+        P2 = probability for fail of socond dice (1-E_extra_dice)
+
+        E_bonus = 1- ((1-E_base_dice) * (1-E_extra_dice)) = 1- (P1 * P2)
 
     Returns:
-
+        E_Base_dice(float): the probability for a success (with or without penalty)
+        E_bonus(float): the probabilty for a success with bonus (with or without penalty)
     """
-    y = penalty_y
-    N = N_from_dice
-    N_e = N_e_from_extra_dice
-    n_1 = get_n(N, threshold_S)
+    Nb = N_from_base_dice
+    n1 = get_n(Nb, threshold_S)
 
-    E_base_dice = len(n_1[y:])/N # gibt bei einer erschwernis ab 1 einen fehler(index)
+    E_base_dice = get_E(n1, Nb, penalty_y)
+    P1 = 1 - E_base_dice
 
-    if N_e is not None:
-        n_2 = get_n(N_e, threshold_S)
-        E_extra_dice = len(n_2[y:]) / N_e  # gibt bei einer erschwernis ab 1 einen fehler(index)
+    if N_e_from_extra_dice is not None:
+        Ne = N_e_from_extra_dice
+        n2 = get_n(Ne, threshold_S)
+        E_extra_dice = get_E(n2, Nb, penalty_y)
+        P2 = 1 - E_extra_dice
 
-        # warscheinlichkeit mit bonus würfel ausrechen
-        E_bonus = get_E_for_bonus()
-
-
-        return
+        E_bonus = 1 - (P1 * P2)
+        return E_bonus
 
     return E_base_dice
 
 
 def get_n(N_from_dice:int=4, threshold:int=4):
+    """Gets all numbers >= threshold"""
     n = []
 
     for i in range(N_from_dice):
@@ -147,7 +153,26 @@ def get_n(N_from_dice:int=4, threshold:int=4):
     return n
 
 
-def get_E_for_bonus():
+def get_E(n:list, N:int, penalty_y:int) -> float:
+    """E is the probabilty for a succes of a probe.
+    the formular is:
+        len(n)/N; n =
+
+    Args:
+        n: all possible numbers >= 4(S) of N
+        N: sides of the dice (4, 6, 8, 10, 12 or 20)
+        penalty_y: adds y to S
+
+    Returns:
+        E(folat): the probabilty for an sucess
+    """
+    y = penalty_y
+    while True:
+        try:
+            E = len(n[y:]) / N
+            return E
+        except IndexError:
+            return 0.0
 
 
 

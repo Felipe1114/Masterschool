@@ -1,5 +1,5 @@
 import pytest
-import main_magical_world as pm
+import old_system_main as pm
 
 
 
