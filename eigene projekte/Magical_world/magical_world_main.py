@@ -29,6 +29,7 @@ def get_probabilty_for_all_throws():
         dc.add_data(text, "probabilty_all_throws.csv")
 
 
+# function is not necesary any more
 def get_all_possible_throws():
     """gets the list of all possible throws, insterts the header for a csv file and saves the list in a csv file"""
     all_possible_throws = at.get_all_possible_throws()
