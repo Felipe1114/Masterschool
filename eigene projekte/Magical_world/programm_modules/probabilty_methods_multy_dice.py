@@ -90,13 +90,26 @@ regel:
             P(W1) = 3/8
             P(W2) = 3/6
 
-            n1&n2 = 1 - (3/8 * 3/6)
+            E_bonus = 1 - (3/8 * 3/6)
 
-            n1&n2 = 1 - 0.0625
-            n1&n2 = 0.9375
+            E_bonus = 1 - 0.0625
+            E_bonus = 0.9375 # ergebnis ist falsch,... aber die formel ist richtig
+
+    Erfolgsstärke (Strngt):
+        Wenn ein würfel die maixmalzahl würfel (4 bei d4, 6 bei d6, usw...) dann explodiert der würfel.
+        Je öfter ein würfel explodiert, desto besser ist das endergebnis.
+
+        Die warscheinlichkeit dafür, dass ein würfel explodiert ist: 1/N
+        Die warscheinlichkeit für 1, 2, 3 und 4 explosionen ist:
+
+            1: 1-((N-1)/N ** 1)
+            2: 1-((N-1)/N ** 2)
+            3: 1-((N-1)/N ** 3)
+            4: 1-((N-1)/N ** 4)
+
 
     """
-def get_prob_for_throw(N_from_base_dice:int=4, N_e_from_extra_dice:int=None, penalty_y:int=0) -> float:
+def get_prob_for_throw(N_from_base_dice:int=4, N_e_from_extra_dice:int=None, penalty_y:int=0) -> tuple:
     """calculates the probabilty of the chance of a success
 
     Args:
@@ -124,6 +137,7 @@ def get_prob_for_throw(N_from_base_dice:int=4, N_e_from_extra_dice:int=None, pen
 
     Eb = get_E(n1, Nb)
 
+    strnght_list = get_throw_strnght(Nb)
     if N_e_from_extra_dice is not None:
         Ne = N_e_from_extra_dice
         n2 = get_n(Ne, threshold_S)
@@ -133,9 +147,9 @@ def get_prob_for_throw(N_from_base_dice:int=4, N_e_from_extra_dice:int=None, pen
         P2 = 1 - Ee
 
         E_bonus = 1 - (P1 * P2)
-        return E_bonus
+        return E_bonus, strnght_list
 
-    return Eb
+    return Eb, strnght_list
 
 
 def get_n(N_from_dice:int=4, threshold:int=4) -> list:
@@ -161,3 +175,16 @@ def get_E(n:list, N:int) -> float:
     """
     E = len(n) / N
     return E
+
+
+def get_throw_strnght(N):
+    """Strnght is the probability of rolling the highest number on a die and the probability that it repeats.
+    formular:
+    1 - ((N - 1) / N ** repeats)
+
+    """
+    strnght_list = []
+    for i in range(4):
+        strnght_list.append(1 - ((N - 1) / N ** (i+1)))
+
+    return strnght_list
