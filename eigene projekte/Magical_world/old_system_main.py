@@ -1,5 +1,5 @@
 from programm_modules import data_CRUM as dc
-from programm_modules import probabilty_methods as pm
+from programm_modules import probabilty_methods_d6 as pm
 
 
 def main():
@@ -13,7 +13,7 @@ def main():
 
   dc.save_data(result_list, file_name)
 
-  better_probabiltay_for_success = round(1/6, 2) # 4 & 5 & 6 von [1, 2, 3, 4, 5, 6]
+  better_probabiltay_for_success = round(3/6, 2) # 4 & 5 & 6 von [1, 2, 3, 4, 5, 6]
   new_result_list = pm.make_data_structure(num_of_dice, better_probabiltay_for_success)
 
   dc.add_data(new_result_list, file_name)

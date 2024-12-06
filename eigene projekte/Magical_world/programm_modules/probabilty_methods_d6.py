@@ -22,7 +22,7 @@ def make_data_structure(num_of_dice, probability_for_success):
   Returns:
     probabilty_list(list): a list for an svg file
   """
-  probability_list = ['alg_probabilt, dices, x_successes, percent_of_success\n']
+  probability_list = ['chance auf erfolg, würfel, anzahl_gewünschter erfolge(x), prozent für x erfolge\n']
   for x_num_of_dice in range(num_of_dice+1):
 
     for scuccesses in range(x_num_of_dice+1):
