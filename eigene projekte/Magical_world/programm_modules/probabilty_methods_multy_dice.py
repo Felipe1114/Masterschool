@@ -106,8 +106,6 @@ regel:
             2: 1-((N-1)/N ** 2)
             3: 1-((N-1)/N ** 3)
             4: 1-((N-1)/N ** 4)
-
-
     """
 def get_prob_for_throw(N_from_base_dice:int=4, N_e_from_extra_dice:int=None, penalty_y:int=0) -> tuple:
     """calculates the probabilty of the chance of a success
@@ -171,20 +169,20 @@ def get_E(n:list, N:int) -> float:
         N: sides of the dice (4, 6, 8, 10, 12 or 20)
 
     Returns:
-        E(folat): the probabilty for an sucess
+        E(folat): the probabilty for a success
     """
     E = len(n) / N
     return E
 
 
 def get_throw_strnght(N):
-    """Strnght is the probability of rolling the highest number on a die and the probability that it repeats.
+    """Strnght is the probability of rolling the highest number on a dice and the probability that it repeats.
     formular:
-    1 - ((N - 1) / N ** repeats)
-
+    1 / N**(x-1)
     """
     strnght_list = []
+
     for i in range(4):
-        strnght_list.append(1 - ((N - 1) / N ** (i+1)))
+        strnght_list.append(1 / N**(i+1))
 
     return strnght_list

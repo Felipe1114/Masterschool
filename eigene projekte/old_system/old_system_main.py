@@ -3,7 +3,7 @@ from programm_modules import probabilty_methods_d6 as pm
 
 
 def main():
-  file_name =  "probabilities.csv"
+  file_name = "probabilities.csv"
 
   num_of_dice = 6 #(n_num_of_dice) kann sich ändern
   probabiltay_for_success = round(2/6, 2) # 5 & 6 von [1, 2, 3, 4, 5, 6]
