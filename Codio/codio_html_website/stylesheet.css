@@ -30,34 +30,46 @@ body{
     flex: 1;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="submit"]{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
 
-    width: 300px; /* Breite des Eingabefelds */
-    height: 50px; /* Höhe des Eingabefelds */
-    font-size: 18px; /* Schriftgröße für den Text */
-    padding: 10px; /* Innenabstand für mehr Platz im Feld */
-    border: 2px solid #004C6D; /* Rahmenfarbe */
-    border-radius: 5px; /* Abgerundete Ecken */
-}
 
 #top{
     background-color: #004C6D;
-    color: #d8e7ff;
 }
 
 #down{
     background-color: ghostwhite;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+
+input[type="text"],
+input[type="password"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #004C6D;
+    border-radius: 5px;
+
+input[type="submit"]{
+
+
+
+}
+
 #text_login{
-    color: #004C6D;
-    font-size: 40px;
+    color: white;
+    font-size: 180px;
     font-family: "JetBrains Mono", Inter, system-ui, sans-serif;
     font-weight: bold;
 }
@@ -67,16 +79,10 @@ input[type="submit"]{
 }
 
 #text_register:hover{
-    color: #004C6D;
 
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 2vh;
-}
+
 
 
 
