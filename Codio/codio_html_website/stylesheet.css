@@ -1,0 +1,87 @@
+body{
+    background-color: #0081b9;
+}
+
+.mainblock{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    padding: 10vh;
+   }
+
+@media screen and (max-width: 600px) {
+    .mainblock{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex: 1
+    }
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    flex: 1;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"]{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+
+    width: 300px; /* Breite des Eingabefelds */
+    height: 50px; /* Höhe des Eingabefelds */
+    font-size: 18px; /* Schriftgröße für den Text */
+    padding: 10px; /* Innenabstand für mehr Platz im Feld */
+    border: 2px solid #004C6D; /* Rahmenfarbe */
+    border-radius: 5px; /* Abgerundete Ecken */
+}
+
+#top{
+    background-color: #004C6D;
+    color: #d8e7ff;
+}
+
+#down{
+    background-color: ghostwhite;
+}
+
+#text_login{
+    color: #004C6D;
+    font-size: 40px;
+    font-family: "JetBrains Mono", Inter, system-ui, sans-serif;
+    font-weight: bold;
+}
+
+.text_register{
+
+}
+
+#text_register:hover{
+    color: #004C6D;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2vh;
+}
+
+
+
+Primary Blue: #004C6D
+Light Blue: #65b6d1
+Accent Light Blue: #0081b9
+Light Gray: #B3B9BC
+Light Blue: #d8e7ff
