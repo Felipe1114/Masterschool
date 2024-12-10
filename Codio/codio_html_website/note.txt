@@ -1,0 +1,7 @@
+
+
+Primary Blue: #004C6D
+Light Blue: #65b6d1
+Accent Light Blue: #0081b9
+Light Gray: #B3B9BC
+Light Blue: #d8e7ff
